@@ -1,45 +1,47 @@
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
+import { AnimatedReveal } from '@/components/ui/AnimatedReveal'
 
 interface CTASectionProps {
   headline?: string
   subline?: string
   primaryCta?: { label: string; href: string }
-  secondaryCta?: { label: string; href: string }
+  email?: boolean
 }
 
 export function CTASection({
   headline = 'Tell KURO about the event.',
   subline = 'One short form. Reply within two working days.',
   primaryCta = { label: 'Start a brief', href: '/brief' },
-  secondaryCta,
+  email = true,
 }: CTASectionProps) {
   return (
-    <section className="bg-[#111111]" aria-label="Call to action">
+    <section className="bg-black border-t border-ash" aria-label="Call to action">
       <Container>
         <div className="py-20 md:py-28">
-          <p className="type-chapter text-[#FAFAFA] mb-6 max-w-2xl">{headline}</p>
-          {subline && (
-            <p className="type-body text-[#777777] mb-12 max-w-sm">{subline}</p>
-          )}
-          <div className="flex flex-wrap gap-4">
-            <Button
-              href={primaryCta.href}
-              variant="secondary"
-              className="!border-[#FAFAFA] !text-[#FAFAFA] hover:!bg-[#FAFAFA] hover:!text-[#111111]"
-            >
-              {primaryCta.label}
-            </Button>
-            {secondaryCta && (
-              <Button
-                href={secondaryCta.href}
-                variant="ghost"
-                className="!text-[#777777] hover:!text-[#FAFAFA]"
-              >
-                {secondaryCta.label}
-              </Button>
+          <AnimatedReveal>
+            <p className="type-chapter text-white mb-4 max-w-2xl">{headline}</p>
+          </AnimatedReveal>
+          <AnimatedReveal delay={0.1}>
+            {subline && (
+              <p className="type-body text-mute mb-10">{subline}</p>
             )}
-          </div>
+          </AnimatedReveal>
+          <AnimatedReveal delay={0.18}>
+            <div className="flex flex-wrap items-center gap-6">
+              <Button href={primaryCta.href} variant="primary">
+                {primaryCta.label}
+              </Button>
+              {email && (
+                <a
+                  href="mailto:hello@deptkuro.com"
+                  className="type-label text-ash hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+                >
+                  hello@deptkuro.com
+                </a>
+              )}
+            </div>
+          </AnimatedReveal>
         </div>
       </Container>
     </section>

@@ -9,10 +9,7 @@ interface SectionProps {
 
 export function Section({ children, className, id, as: Tag = 'section' }: SectionProps) {
   return (
-    <Tag
-      id={id}
-      className={cx('py-20 md:py-28', className)}
-    >
+    <Tag id={id} className={cx('py-20 md:py-28', className)}>
       {children}
     </Tag>
   )

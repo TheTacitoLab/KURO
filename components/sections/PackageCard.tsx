@@ -1,6 +1,4 @@
 import { Button } from '@/components/ui/Button'
-import { StatusTag } from '@/components/ui/StatusTag'
-import { Rule } from '@/components/ui/Rule'
 import { cx } from '@/lib/utils'
 
 interface PackageCardProps {
@@ -31,36 +29,52 @@ export function PackageCard({
   return (
     <article
       className={cx(
-        'border border-[#DDDDDD] p-8 flex flex-col gap-6',
+        'bg-graphite border border-ash flex flex-col transition-transform duration-300 hover:-translate-y-1 hover:border-mid',
         className
       )}
     >
-      <div>
-        <span className="type-label text-[#777777] block mb-4">{number}</span>
-        <h3 className="type-label text-[#111111] text-base tracking-widest mb-2">{name}</h3>
-        <StatusTag variant={status}>{statusLabel}</StatusTag>
+      {/* Header */}
+      <div className="border-b border-ash p-6 md:p-7">
+        <div className="flex items-start justify-between mb-5">
+          <span className="type-label text-ash">{number}</span>
+          <span
+            className={cx(
+              'type-label',
+              status === 'available' ? 'text-white' : 'text-mute'
+            )}
+          >
+            {statusLabel}
+          </span>
+        </div>
+        <h3 className="type-label text-white tracking-widest text-sm">{name}</h3>
       </div>
 
-      <Rule weight="hair" />
-
-      <div>
-        <p className="type-lede text-[#111111] mb-3">{tagline}</p>
-        <p className="type-body text-[#777777]">{description}</p>
+      {/* Body */}
+      <div className="p-6 md:p-7 flex-1">
+        <p className="type-lede text-white mb-3">{tagline}</p>
+        <p className="type-body text-mute">{description}</p>
       </div>
 
+      {/* Includes */}
       {includes && includes.length > 0 && (
-        <ul className="space-y-2">
-          {includes.map((item, i) => (
-            <li key={i} className="type-body text-[#4A4A4A] flex items-start gap-3">
-              <span className="inline-block w-2 h-2 bg-[#111111] mt-2 shrink-0" aria-hidden="true" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        <div className="border-t border-ash p-6 md:p-7">
+          <ul className="space-y-3">
+            {includes.map((item, i) => (
+              <li key={i} className="flex items-start gap-3 type-body text-mute">
+                <span
+                  className="inline-block w-1.5 h-1.5 bg-mute mt-2 shrink-0"
+                  aria-hidden="true"
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
-      <div className="mt-auto pt-4">
-        <Button href={ctaHref} variant="primary">
+      {/* CTA */}
+      <div className="border-t border-ash p-6 md:p-7 mt-auto">
+        <Button href={ctaHref} variant="secondary">
           {ctaLabel}
         </Button>
       </div>

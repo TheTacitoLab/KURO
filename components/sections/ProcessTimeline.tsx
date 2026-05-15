@@ -1,4 +1,4 @@
-import { Rule } from '@/components/ui/Rule'
+import { cx } from '@/lib/utils'
 
 interface ProcessStep {
   number: string
@@ -34,7 +34,7 @@ const steps: ProcessStep[] = [
     title: 'Commerce',
     timeframe: 'Storefront live, where applicable.',
     description:
-      'For MADE + SELL and MADE + SELL + SHIP. Shopify storefront built in the event\'s brand.',
+      "For MADE + SELL and MADE + SELL + SHIP. Shopify storefront built in the event's brand.",
   },
   {
     number: '05',
@@ -54,18 +54,25 @@ const steps: ProcessStep[] = [
 
 export function ProcessTimeline() {
   return (
-    <ol className="relative" aria-label="Project process steps">
-      {steps.map((step, i) => (
-        <li key={step.number} className="relative">
-          {i > 0 && <Rule weight="hair" />}
-          <div className="py-10 md:py-14 md:grid md:grid-cols-[120px_1fr] md:gap-12">
-            <div className="flex items-start gap-4 mb-4 md:mb-0 md:flex-col md:gap-2">
-              <span className="type-label text-[#777777]">{step.number}</span>
-              <h3 className="type-label text-[#111111]">{step.title}</h3>
+    <ol aria-label="Project process stages">
+      {steps.map((step) => (
+        <li key={step.number}>
+          <div
+            className={cx(
+              'border-b border-ash py-10 md:py-14 md:grid md:gap-16',
+              'md:grid-cols-[140px_1fr]'
+            )}
+          >
+            {/* Left: number + title */}
+            <div className="flex items-baseline gap-4 mb-5 md:mb-0 md:flex-col md:gap-3 md:pt-1">
+              <span className="type-label text-ash leading-none">{step.number}</span>
+              <span className="type-label text-white leading-none">{step.title}</span>
             </div>
+
+            {/* Right: timeframe + description */}
             <div>
-              <p className="type-lede text-[#111111] mb-3">{step.timeframe}</p>
-              <p className="type-body text-[#777777]">{step.description}</p>
+              <p className="type-lede text-white mb-4">{step.timeframe}</p>
+              <p className="type-body text-mute">{step.description}</p>
             </div>
           </div>
         </li>

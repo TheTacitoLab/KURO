@@ -12,8 +12,8 @@ export function StatusTag({ children, variant = 'available', className }: Status
       className={cx(
         'type-label inline-block px-3 py-1.5 border',
         variant === 'available'
-          ? 'border-[#111111] text-[#111111]'
-          : 'border-[#DDDDDD] text-[#777777]',
+          ? 'border-white text-white'
+          : 'border-ash text-mute',
         className
       )}
     >

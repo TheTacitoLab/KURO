@@ -4,11 +4,15 @@
 
 :root {
   --black: #000000;
-  --ink: #111111;
+  --carbon: #050505;
+  --ink: #0B0B0B;
+  --graphite: #111111;
+  --steel: #1A1A1A;
+  --ash: #2A2A2A;
   --mid: #4A4A4A;
   --mute: #777777;
-  --hair: #DDDDDD;
-  --soft: #F4F4F4;
+  --hair: #D8D8D8;
+  --soft: #F2F2F2;
   --paper: #FAFAFA;
   --white: #FFFFFF;
 }
@@ -25,20 +29,20 @@
   }
 
   body {
-    background-color: var(--paper);
-    color: var(--ink);
+    background-color: var(--ink);
+    color: var(--white);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-size: 1rem;
     line-height: 1.65;
   }
 
   ::selection {
-    background-color: var(--ink);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--ink);
   }
 
   :focus-visible {
-    outline: 2px solid var(--ink);
+    outline: 2px solid var(--white);
     outline-offset: 3px;
   }
 
@@ -56,14 +60,15 @@
 
 @layer utilities {
   .type-display {
-    font-size: clamp(4rem, 12vw, 10rem);
+    font-size: clamp(3rem, 9vw, 8.5rem);
     line-height: 0.9;
-    letter-spacing: -0.04em;
-    font-weight: 700;
+    letter-spacing: -0.025em;
+    font-weight: 800;
+    text-transform: uppercase;
   }
 
   .type-chapter {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(1.75rem, 4vw, 3.5rem);
     line-height: 1.05;
     letter-spacing: -0.03em;
     font-weight: 700;
@@ -91,18 +96,8 @@
     text-transform: uppercase;
   }
 
-  .fade-in {
-    animation: fadeIn 0.6s ease-out both;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Light section overrides */
+  .on-light :focus-visible {
+    outline-color: var(--ink);
   }
 }

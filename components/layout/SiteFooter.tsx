@@ -1,26 +1,26 @@
 import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
-import { Rule } from '@/components/ui/Rule'
 
 export function SiteFooter() {
   return (
-    <footer className="bg-paper border-t border-[#DDDDDD]">
+    <footer className="bg-black border-t border-ash">
       <Container>
         <div className="py-10 md:py-14">
-          <Rule weight="heavy" className="mb-10 md:mb-14" />
-
           <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
             <div>
-              <p className="type-label text-[#111111] mb-1">
-                <span className="text-[#777777] mr-2">黒 ·</span>KURO
+              <p className="type-label text-white mb-1">
+                <span className="text-mute mr-2" aria-hidden="true">
+                  黒 ·
+                </span>
+                KURO
               </p>
-              <p className="type-label text-[#777777]">© 2026</p>
+              <p className="type-label text-ash">© 2026</p>
             </div>
 
             <div className="flex flex-col gap-2">
               <a
                 href="mailto:hello@deptkuro.com"
-                className="type-label text-[#777777] hover:text-[#111111] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111]"
+                className="type-label text-mute hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 Email. hello@deptkuro.com
               </a>
@@ -28,7 +28,7 @@ export function SiteFooter() {
                 href="https://instagram.com/deptkuro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="type-label text-[#777777] hover:text-[#111111] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111]"
+                className="type-label text-mute hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 Instagram. @deptkuro
               </a>
@@ -36,30 +36,26 @@ export function SiteFooter() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="type-label text-[#777777] hover:text-[#111111] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111]"
+                className="type-label text-mute hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 LinkedIn. KURO Studio
               </a>
             </div>
           </div>
 
-          <Rule weight="hair" className="mt-10 mb-6" />
-
-          <div className="flex flex-col gap-2 md:flex-row md:justify-between md:items-center">
-            <p className="type-label text-[#777777]">
+          <div className="border-t border-ash mt-10 pt-6 flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
+            <p className="type-label text-ash">
               Department KURO. A dedicated department for limited edition jerseys.
             </p>
-            <div className="flex gap-6">
-              <Link
-                href="/privacy"
-                className="type-label text-[#777777] hover:text-[#111111] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#111111]"
-              >
-                Privacy
-              </Link>
-            </div>
+            <Link
+              href="/privacy"
+              className="type-label text-mute hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Privacy
+            </Link>
           </div>
 
-          <p className="type-label text-[#DDDDDD] mt-6">KURO. 黒.</p>
+          <p className="type-label text-ash/40 mt-8">KURO. 黒.</p>
         </div>
       </Container>
     </footer>

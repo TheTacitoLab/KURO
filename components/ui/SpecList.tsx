@@ -8,17 +8,22 @@ interface SpecItem {
 interface SpecListProps {
   items: SpecItem[]
   className?: string
+  theme?: 'dark' | 'light'
 }
 
-export function SpecList({ items, className }: SpecListProps) {
+export function SpecList({ items, className, theme = 'dark' }: SpecListProps) {
+  const dividerClass = theme === 'dark' ? 'divide-ash' : 'divide-hair'
+  const labelClass = theme === 'dark' ? 'text-mute' : 'text-mid'
+  const valueClass = theme === 'dark' ? 'text-white' : 'text-ink'
+
   return (
-    <ul className={cx('space-y-0 divide-y divide-[#DDDDDD]', className)}>
+    <ul className={cx('space-y-0 divide-y', dividerClass, className)}>
       {items.map((item, i) => (
-        <li key={i} className="flex items-start justify-between gap-8 py-3">
+        <li key={i} className="flex items-start justify-between gap-8 py-4">
           {item.label && (
-            <span className="type-label text-[#777777] shrink-0">{item.label}</span>
+            <span className={cx('type-label shrink-0', labelClass)}>{item.label}</span>
           )}
-          <span className="type-body text-[#111111] text-right">{item.value}</span>
+          <span className={cx('type-body text-right', valueClass)}>{item.value}</span>
         </li>
       ))}
     </ul>

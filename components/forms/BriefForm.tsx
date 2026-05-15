@@ -25,9 +25,9 @@ const volumeOptions = [
 ]
 
 const inputBase =
-  'w-full bg-transparent border-b border-[#DDDDDD] py-3 type-body text-[#111111] placeholder:text-[#DDDDDD] focus:outline-none focus:border-[#111111] transition-colors duration-150'
+  'w-full bg-transparent border-b border-ash py-4 type-body text-white placeholder:text-ash focus:outline-none focus:border-white transition-colors duration-200'
 
-const labelBase = 'type-label text-[#777777] block mb-2'
+const labelBase = 'type-label text-mute block mb-3'
 
 export function BriefForm() {
   const [status, setStatus] = useState<FormStatus>('idle')
@@ -69,7 +69,7 @@ export function BriefForm() {
     setStatus('submitting')
 
     try {
-      // Form submission endpoint — wire to Formspree, Resend, or API route via env variable
+      // Wire to Formspree, Resend, or API route via NEXT_PUBLIC_FORM_ENDPOINT
       const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT || '/api/brief'
       const res = await fetch(endpoint, {
         method: 'POST',
@@ -85,20 +85,16 @@ export function BriefForm() {
 
   if (status === 'success') {
     return (
-      <div
-        role="status"
-        aria-live="polite"
-        className="py-16 border-t border-[#DDDDDD]"
-      >
-        <p className="type-chapter text-[#111111] mb-4">Received.</p>
-        <p className="type-body text-[#777777] max-w-sm">
+      <div role="status" aria-live="polite" className="py-12 border-t border-ash">
+        <p className="type-chapter text-white mb-5">Received.</p>
+        <p className="type-body text-mute mb-3">
           KURO will reply within two working days.
         </p>
-        <p className="type-body text-[#777777] max-w-sm mt-2">
+        <p className="type-body text-mute">
           If the event is time-sensitive, email{' '}
           <a
             href="mailto:hello@deptkuro.com"
-            className="text-[#111111] underline underline-offset-4 hover:text-[#4A4A4A]"
+            className="text-white underline underline-offset-4 hover:text-hair transition-colors"
           >
             hello@deptkuro.com
           </a>{' '}
@@ -124,14 +120,14 @@ export function BriefForm() {
             name="name"
             autoComplete="name"
             required
-            className={cx(inputBase, errors.name && 'border-[#111111]')}
+            className={cx(inputBase, errors.name && 'border-white')}
             value={data.name}
             onChange={(e) => update('name', e.target.value)}
             aria-describedby={errors.name ? 'error-name' : undefined}
             aria-invalid={!!errors.name}
           />
           {errors.name && (
-            <p id="error-name" className="type-label text-[#111111] mt-2" role="alert">
+            <p id="error-name" className="type-label text-white mt-2" role="alert">
               {errors.name}
             </p>
           )}
@@ -164,14 +160,14 @@ export function BriefForm() {
             name="email"
             autoComplete="email"
             required
-            className={cx(inputBase, errors.email && 'border-[#111111]')}
+            className={cx(inputBase, errors.email && 'border-white')}
             value={data.email}
             onChange={(e) => update('email', e.target.value)}
             aria-describedby={errors.email ? 'error-email' : undefined}
             aria-invalid={!!errors.email}
           />
           {errors.email && (
-            <p id="error-email" className="type-label text-[#111111] mt-2" role="alert">
+            <p id="error-email" className="type-label text-white mt-2" role="alert">
               {errors.email}
             </p>
           )}
@@ -186,14 +182,14 @@ export function BriefForm() {
             id="brief-event"
             type="text"
             name="event"
-            className={cx(inputBase, errors.event && 'border-[#111111]')}
+            className={cx(inputBase, errors.event && 'border-white')}
             value={data.event}
             onChange={(e) => update('event', e.target.value)}
             aria-describedby={errors.event ? 'error-event' : undefined}
             aria-invalid={!!errors.event}
           />
           {errors.event && (
-            <p id="error-event" className="type-label text-[#111111] mt-2" role="alert">
+            <p id="error-event" className="type-label text-white mt-2" role="alert">
               {errors.event}
             </p>
           )}
@@ -202,18 +198,18 @@ export function BriefForm() {
         {/* Volume */}
         <div>
           <fieldset>
-            <legend className={cx(labelBase, 'mb-4')}>
+            <legend className={cx(labelBase, 'mb-5')}>
               Approximate volume <span aria-label="required">*</span>
             </legend>
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
               {volumeOptions.map((opt) => (
                 <label
                   key={opt.value}
                   className={cx(
-                    'border py-3 px-4 type-label cursor-pointer transition-colors',
+                    'border py-4 px-4 type-label cursor-pointer transition-all duration-200',
                     data.volume === opt.value
-                      ? 'border-[#111111] bg-[#111111] text-[#FAFAFA]'
-                      : 'border-[#DDDDDD] text-[#4A4A4A] hover:border-[#111111]'
+                      ? 'border-white bg-white text-ink'
+                      : 'border-ash text-mute hover:border-mute hover:text-white'
                   )}
                 >
                   <input
@@ -230,7 +226,7 @@ export function BriefForm() {
               ))}
             </div>
             {errors.volume && (
-              <p className="type-label text-[#111111] mt-2" role="alert">
+              <p className="type-label text-white mt-3" role="alert">
                 {errors.volume}
               </p>
             )}
@@ -273,11 +269,11 @@ export function BriefForm() {
 
       {status === 'error' && (
         <div role="alert" aria-live="assertive" className="mb-6">
-          <p className="type-body text-[#111111]">
+          <p className="type-body text-white">
             Something went wrong. Try again, or email{' '}
             <a
               href="mailto:hello@deptkuro.com"
-              className="underline underline-offset-4 hover:text-[#4A4A4A]"
+              className="underline underline-offset-4 hover:text-hair transition-colors"
             >
               hello@deptkuro.com
             </a>
