@@ -1,61 +1,124 @@
 import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
+import { MarqueeStrip } from '@/components/ui/MarqueeStrip'
 
 export function SiteFooter() {
   return (
-    <footer className="bg-black border-t border-ash">
-      <Container>
-        <div className="py-10 md:py-14">
-          <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-            <div>
-              <p className="type-label text-white mb-1">
-                <span className="text-mute mr-2" aria-hidden="true">
-                  黒 ·
-                </span>
-                KURO
-              </p>
-              <p className="type-label text-ash">© 2026</p>
-            </div>
+    <footer className="bg-ink text-cream relative on-dark">
+      <MarqueeStrip
+        tone="sun"
+        size="lg"
+        items={[
+          'KURO',
+          'LIMITED EDITION',
+          'MADE TO REMEMBER',
+          'FESTIVALS',
+          'TOURS',
+          'BRAND ACTIVATIONS',
+          'LIVE EVENTS',
+        ]}
+      />
 
-            <div className="flex flex-col gap-2">
-              <a
-                href="mailto:hello@deptkuro.com"
-                className="type-label text-mute hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+      <Container>
+        <div className="py-16 md:py-20 grid gap-12 md:grid-cols-12">
+          {/* Brand block */}
+          <div className="md:col-span-5">
+            <Link href="/" className="inline-flex items-center gap-3 mb-6">
+              <span
+                aria-hidden="true"
+                className="w-9 h-9 rounded-full bg-coral grid place-items-center text-cream text-sm font-extrabold"
               >
-                Email. hello@deptkuro.com
-              </a>
-              <a
-                href="https://instagram.com/deptkuro"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="type-label text-mute hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                Instagram. @deptkuro
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="type-label text-mute hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                LinkedIn. KURO Studio
-              </a>
-            </div>
+                K
+              </span>
+              <span className="font-extrabold text-2xl tracking-tight">KURO</span>
+            </Link>
+            <p className="type-headline max-w-md">
+              The jersey studio for events worth keeping.
+            </p>
+            <p className="type-body text-cream/70 mt-4 max-w-md">
+              Department KURO — a dedicated jersey department for the event.
+            </p>
           </div>
 
-          <div className="border-t border-ash mt-10 pt-6 flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
-            <p className="type-label text-ash">
-              Department KURO. A dedicated department for limited edition jerseys.
-            </p>
+          {/* Contact */}
+          <div className="md:col-span-3">
+            <p className="type-label text-cream/60 mb-5">Contact</p>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="mailto:hello@deptkuro.com"
+                  className="type-body text-cream hover:text-sun transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
+                >
+                  hello@deptkuro.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/deptkuro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="type-body text-cream hover:text-sun transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
+                >
+                  @deptkuro
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="type-body text-cream hover:text-sun transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
+                >
+                  KURO Studio · LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Nav */}
+          <div className="md:col-span-2">
+            <p className="type-label text-cream/60 mb-5">Studio</p>
+            <ul className="space-y-3">
+              {[
+                { href: '/packages', label: 'Packages' },
+                { href: '/process', label: 'Process' },
+                { href: '/studio', label: 'Studio' },
+                { href: '/brief', label: 'Start a brief' },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="type-body text-cream hover:text-sun transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Meta */}
+          <div className="md:col-span-2 flex flex-col gap-3 md:items-end">
+            <p className="type-label text-cream/60">Based</p>
+            <p className="type-body">Hampshire, UK</p>
+            <p className="type-label text-cream/60 mt-2">Reach</p>
+            <p className="type-body">Global</p>
+          </div>
+        </div>
+
+        <div className="border-t border-cream/15 py-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <p className="type-label text-cream/60">© 2026 KURO · DEPARTMENT KURO</p>
+          <div className="flex items-center gap-6">
             <Link
               href="/privacy"
-              className="type-label text-mute hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="type-label text-cream/70 hover:text-sun transition-colors"
             >
               Privacy
             </Link>
+            <span className="type-label text-cream/40">
+              A jersey department for the event.
+            </span>
           </div>
-
-          <p className="type-label text-ash/40 mt-8">KURO. 黒.</p>
         </div>
       </Container>
     </footer>

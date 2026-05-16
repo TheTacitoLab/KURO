@@ -4,14 +4,16 @@ import { HeroSection } from '@/components/sections/HeroSection'
 import { CTASection } from '@/components/sections/CTASection'
 import { AnimatedReveal } from '@/components/ui/AnimatedReveal'
 import { Container } from '@/components/ui/Container'
-import { Rule } from '@/components/ui/Rule'
 import { Button } from '@/components/ui/Button'
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder'
+import { MarqueeStrip } from '@/components/ui/MarqueeStrip'
+import { GraphicTile } from '@/components/ui/GraphicTile'
+import { StatusTag } from '@/components/ui/StatusTag'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'KURO — Black Label Jersey Studio',
+  title: 'KURO — Limited Edition Football Jerseys',
   description:
-    'Limited edition football jerseys made to remember. Designed and manufactured for festivals, tours, brand activations and live events.',
+    'KURO designs and manufactures limited edition football jerseys for festivals, tours, brand activations and live events. Made to remember.',
 })
 
 export default function HomePage() {
@@ -20,296 +22,370 @@ export default function HomePage() {
       {/* 01. HERO */}
       <HeroSection />
 
-      {/* 02. POSITIONING — light contrast break */}
-      <section className="bg-paper text-ink" aria-labelledby="positioning-heading">
+      {/* Marquee strip */}
+      <MarqueeStrip
+        tone="ink"
+        size="lg"
+        items={[
+          'FOR THE DROP',
+          'FOR THE AFTER',
+          'FOR THE MEMORY',
+          'FOR THE EVENT',
+          'FOR THE WEEKEND',
+        ]}
+      />
+
+      {/* 02. POSITIONING */}
+      <section
+        className="bg-cream text-ink relative tex-grain"
+        aria-labelledby="positioning-heading"
+      >
         <Container>
-          <div className="py-20 md:py-28">
-            <AnimatedReveal>
-              <Rule weight="heavy" theme="light" className="mb-10 md:mb-14 max-w-sm" />
-            </AnimatedReveal>
-
-            <div className="md:grid md:grid-cols-2 md:gap-24">
-              <div>
-                <AnimatedReveal delay={0.08}>
-                  <h2
-                    id="positioning-heading"
-                    className="type-chapter text-ink mb-8"
-                  >
-                    The invisible partner behind the jersey.
-                  </h2>
-                </AnimatedReveal>
-                <AnimatedReveal delay={0.16}>
-                  <p className="type-body text-mid mb-3">
-                    Studio, supply chain, infrastructure.
-                  </p>
-                  <p className="type-body text-mid">
-                    Plugged into the event, working in the brand.
-                  </p>
-                </AnimatedReveal>
-              </div>
-
-              <div className="mt-10 md:mt-0">
-                <AnimatedReveal delay={0.12}>
-                  <p className="type-label text-mid mb-5">Department KURO</p>
-                  <p className="type-body text-mid mb-4">
-                    Department KURO is the operating model.
-                  </p>
-                  <p className="type-body text-mid">
-                    A small dedicated unit for limited edition jerseys. The client gets
-                    the department without building one.
-                  </p>
-                </AnimatedReveal>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* 03. WHAT KURO MAKES — dark */}
-      <section className="bg-ink" aria-labelledby="makes-heading">
-        <Container>
-          <div className="py-20 md:py-28">
-            <AnimatedReveal>
-              <Rule weight="hair" className="mb-10 md:mb-14" />
-            </AnimatedReveal>
-
-            <div className="md:grid md:grid-cols-2 md:gap-16 md:items-start mb-16 md:mb-20">
-              {/* Left: editorial stacked heading */}
-              <div className="mb-12 md:mb-0">
-                <AnimatedReveal>
-                  <h2
-                    id="makes-heading"
-                    className="text-white leading-[0.92] tracking-tight font-extrabold uppercase"
-                    style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)' }}
-                  >
-                    <span className="block">WHAT</span>
-                    <span className="block">KURO</span>
-                    <span className="block text-mute">MAKES.</span>
-                  </h2>
-                </AnimatedReveal>
-              </div>
-
-              {/* Right: three modules */}
-              <div className="space-y-0 divide-y divide-ash">
-                <AnimatedReveal delay={0.1}>
-                  <div className="py-8">
-                    <p className="type-label text-mute mb-3">Limited edition.</p>
-                    <p className="type-body text-hair">
-                      Every design belongs to one event.
-                    </p>
-                  </div>
-                </AnimatedReveal>
-                <AnimatedReveal delay={0.18}>
-                  <div className="py-8">
-                    <p className="type-label text-mute mb-3">Retail standard.</p>
-                    <p className="type-body text-hair">
-                      Built properly. Not printed on blanks.
-                    </p>
-                  </div>
-                </AnimatedReveal>
-                <AnimatedReveal delay={0.26}>
-                  <div className="py-8">
-                    <p className="type-label text-mute mb-3">Designed for the event.</p>
-                    <p className="type-body text-hair">
-                      The jersey is the souvenir, the product, and the proof.
-                    </p>
-                  </div>
-                </AnimatedReveal>
-              </div>
-            </div>
-
-            {/* Image placeholder */}
-            <AnimatedReveal>
-              <ImagePlaceholder
-                label="JERSEY LAB IMAGE"
-                sublabel="PLACEHOLDER / 01"
-                aspectRatio="aspect-[16/7]"
-                className="w-full"
-              />
-            </AnimatedReveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* 04. WHO IT IS FOR — darkest */}
-      <section className="bg-black" aria-labelledby="who-heading">
-        <Container>
-          <div className="py-20 md:py-28">
-            <AnimatedReveal>
-              <p className="type-label text-ash mb-10 md:mb-14">
-                EVENT PRODUCT / LIMITED DROP / GLOBAL REACH
-              </p>
-            </AnimatedReveal>
-
-            <AnimatedReveal delay={0.08}>
-              <h2 id="who-heading" className="type-chapter text-white mb-12 md:mb-16">
-                Who it is for.
-              </h2>
-            </AnimatedReveal>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 border border-ash divide-y md:divide-y-0 md:divide-x divide-ash mb-12">
-              {['Festivals', 'Tours', 'Brand activations', 'Live events'].map(
-                (item, i) => (
-                  <AnimatedReveal key={item} delay={0.08 * i}>
-                    <div className="p-6 md:p-8">
-                      <p className="type-label text-white">{item}</p>
-                    </div>
-                  </AnimatedReveal>
-                )
-              )}
-            </div>
-
-            <div className="md:grid md:grid-cols-2 md:gap-24">
+          <div className="py-24 md:py-36 grid md:grid-cols-12 gap-10 items-end">
+            <div className="md:col-span-7">
               <AnimatedReveal>
-                <p className="type-body text-mute">
-                  Primary audience: live music and festivals globally.
-                </p>
+                <p className="type-tag text-coral mb-6">✶ POSITIONING / 01</p>
               </AnimatedReveal>
               <AnimatedReveal delay={0.08}>
-                <p className="type-body text-mute mt-4 md:mt-0">
-                  Also serves: entertainment IP, sports rights holders and brand teams.
+                <h2 id="positioning-heading" className="type-display">
+                  The jersey that{' '}
+                  <span className="type-serif text-ember normal-case font-normal lowercase">
+                    outlives
+                  </span>{' '}
+                  the event.
+                </h2>
+              </AnimatedReveal>
+            </div>
+
+            <AnimatedReveal delay={0.16} className="md:col-span-5">
+              <div className="space-y-5 type-lede text-ink/80">
+                <p>
+                  KURO designs and manufactures limited edition football jerseys for the
+                  moments people remember.
                 </p>
+                <p className="type-body text-smoke">
+                  Festivals. Tours. Brand activations. Live events.
+                </p>
+                <p className="type-body text-smoke">
+                  The event gets the drop.{' '}
+                  <span className="text-ink">The crowd gets the jersey.</span> The jersey
+                  gets kept.
+                </p>
+              </div>
+            </AnimatedReveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* 03. WHAT KURO MAKES — three colored tiles */}
+      <section
+        className="bg-paper text-ink relative tex-grain"
+        aria-labelledby="makes-heading"
+      >
+        <Container>
+          <div className="py-24 md:py-32">
+            <div className="grid md:grid-cols-12 gap-8 mb-12 md:mb-16">
+              <div className="md:col-span-7">
+                <AnimatedReveal>
+                  <p className="type-tag text-sea mb-6">✶ WHAT KURO MAKES / 02</p>
+                </AnimatedReveal>
+                <AnimatedReveal delay={0.1}>
+                  <h2 id="makes-heading" className="type-display">
+                    Not merch.{' '}
+                    <span className="type-serif text-sea normal-case font-normal italic">
+                      A memory.
+                    </span>
+                  </h2>
+                </AnimatedReveal>
+              </div>
+              <AnimatedReveal delay={0.18} className="md:col-span-5 md:pt-2">
+                <p className="type-body text-smoke max-w-md">
+                  Three things make a KURO jersey what it is. Edition. Build. Intent.
+                </p>
+              </AnimatedReveal>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5">
+              <AnimatedReveal>
+                <GraphicTile
+                  number="01"
+                  label="EDITION"
+                  title="Limited edition."
+                  description="Every design belongs to one event. Made once. Not restocked."
+                  tone="coral"
+                  pattern="stripes"
+                />
+              </AnimatedReveal>
+              <AnimatedReveal delay={0.08}>
+                <GraphicTile
+                  number="02"
+                  label="BUILD"
+                  title="Built properly."
+                  description="Retail-standard construction. Cut-and-sew or sublimation. Not printed on blanks."
+                  tone="sun"
+                  pattern="pitch"
+                />
+              </AnimatedReveal>
+              <AnimatedReveal delay={0.16}>
+                <GraphicTile
+                  number="03"
+                  label="INTENT"
+                  title="Made to keep."
+                  description="The jersey is the souvenir, the product, and the proof."
+                  tone="sea"
+                  pattern="dots"
+                />
+              </AnimatedReveal>
+            </div>
+
+            {/* Image strip */}
+            <div className="grid md:grid-cols-12 gap-5 mt-14">
+              <AnimatedReveal className="md:col-span-5">
+                <ImagePlaceholder
+                  tone="terracotta"
+                  number="9"
+                  label="THE FESTIVAL JERSEY"
+                  sublabel="EDITION / 002"
+                />
+              </AnimatedReveal>
+              <AnimatedReveal delay={0.08} className="md:col-span-4">
+                <ImagePlaceholder
+                  tone="mint"
+                  number="7"
+                  label="THE TOUR SHIRT"
+                  sublabel="EDITION / 003"
+                  aspectRatio="aspect-[4/5]"
+                />
+              </AnimatedReveal>
+              <AnimatedReveal delay={0.16} className="md:col-span-3">
+                <ImagePlaceholder
+                  tone="lilac"
+                  number="11"
+                  label="THE AFTER"
+                  sublabel="EDITION / 004"
+                  aspectRatio="aspect-[3/5]"
+                />
               </AnimatedReveal>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* 05. WHY KURO — dark, hard-talking */}
-      <section className="bg-ink" aria-labelledby="why-heading">
+      {/* 04. WHO IT IS FOR — colourful blocks */}
+      <section
+        className="bg-cream text-ink relative tex-grain"
+        aria-labelledby="who-heading"
+      >
         <Container>
-          <div className="py-20 md:py-28">
-            <AnimatedReveal>
-              <Rule weight="hair" className="mb-10 md:mb-14" />
-            </AnimatedReveal>
-
-            <div className="md:grid md:grid-cols-2 md:gap-24">
-              {/* Left: problem */}
-              <div>
+          <div className="py-24 md:py-32">
+            <div className="grid md:grid-cols-12 gap-8 mb-12">
+              <div className="md:col-span-8">
                 <AnimatedReveal>
-                  <h2 id="why-heading" className="type-chapter text-white mb-10">
-                    Why KURO.
-                  </h2>
+                  <p className="type-tag text-olive mb-6">✶ WHO IT IS FOR / 03</p>
                 </AnimatedReveal>
                 <AnimatedReveal delay={0.1}>
-                  <div className="space-y-4 type-body text-mute">
-                    <p>The standard route is a chain of vendors.</p>
-                    <p>
-                      A design agency. A factory overseas. A fulfilment partner.
-                      Another handoff.
-                    </p>
-                    <p>Things slip. Costs rise. The jersey arrives late or off-brand.</p>
-                    <p>It ends up in a charity shop.</p>
-                  </div>
-                </AnimatedReveal>
-              </div>
-
-              {/* Right: resolution */}
-              <div className="mt-12 md:mt-0">
-                <AnimatedReveal delay={0.08}>
-                  <div className="border-l-[3px] border-white pl-8 mb-10">
-                    <p className="type-lede text-white mb-4">KURO removes the chain.</p>
-                    <p className="type-body text-mute">
-                      One studio. One contract. One delivered outcome.
-                    </p>
-                  </div>
-                </AnimatedReveal>
-                <AnimatedReveal delay={0.16}>
-                  <p className="type-body text-mute mb-3">
-                    Commercial results that match the size of the event.
-                  </p>
-                  <p className="type-body text-mute mb-10">
-                    Brand engagement that survives the weekend.
-                  </p>
-                </AnimatedReveal>
-                <AnimatedReveal delay={0.22}>
-                  <Rule weight="hair" className="mb-8" />
-                  <p className="type-label text-ash mb-3">Department KURO</p>
-                  <p className="type-body text-mute">
-                    Department KURO exists for the teams that need the jersey handled
-                    without building the department themselves.
-                  </p>
+                  <h2 id="who-heading" className="type-display">
+                    One event.{' '}
+                    <span className="text-coral">One jersey.</span>{' '}
+                    <span className="text-sea">One keeper.</span>
+                  </h2>
                 </AnimatedReveal>
               </div>
             </div>
-          </div>
-        </Container>
-      </section>
 
-      {/* 06. PACKAGES PREVIEW — graphite, technical modules */}
-      <section className="bg-graphite border-t border-ash" aria-labelledby="packages-heading">
-        <Container>
-          <div className="py-20 md:py-28">
-            <AnimatedReveal>
-              <p className="type-label text-mute mb-10 md:mb-14">
-                STUDIO / SUPPLY CHAIN / INFRASTRUCTURE
-              </p>
-            </AnimatedReveal>
-
-            <AnimatedReveal delay={0.08}>
-              <h2 id="packages-heading" className="type-chapter text-white mb-12 md:mb-16">
-                Three ways to work with KURO.
-              </h2>
-            </AnimatedReveal>
-
-            <div className="grid md:grid-cols-3 border border-ash divide-y md:divide-y-0 md:divide-x divide-ash mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {[
-                {
-                  n: '01',
-                  name: 'MADE',
-                  desc: 'Designed and manufactured by KURO. Delivered to the client.',
-                  status: 'AVAILABLE NOW',
-                  available: true,
-                },
-                {
-                  n: '02',
-                  name: 'MADE + SELL',
-                  desc: "The same, plus the storefront, built in the event's brand.",
-                  status: 'COMING SOON',
-                  available: false,
-                },
-                {
-                  n: '03',
-                  name: 'MADE + SELL + SHIP',
-                  desc: 'The full chain. KURO designs, makes, sells and ships.',
-                  status: 'COMING SOON',
-                  available: false,
-                },
-              ].map((pkg, i) => (
-                <AnimatedReveal key={pkg.n} delay={0.08 * i}>
-                  <div className="p-7 md:p-8 h-full flex flex-col gap-6">
-                    <div className="flex items-start justify-between">
-                      <span className="type-label text-ash">{pkg.n}</span>
-                      <span
-                        className={
-                          pkg.available ? 'type-label text-white' : 'type-label text-mute'
-                        }
-                      >
-                        {pkg.status}
-                      </span>
-                    </div>
+                { label: 'Festivals', tone: 'coral', icon: '✶' },
+                { label: 'Tours', tone: 'sea', icon: '✦' },
+                { label: 'Brand activations', tone: 'olive', icon: '✺' },
+                { label: 'Live events', tone: 'lilac', icon: '✷' },
+              ].map((item, i) => (
+                <AnimatedReveal key={item.label} delay={0.06 * i}>
+                  <div
+                    className={`
+                      relative aspect-[4/5] rounded-2xl p-5 md:p-6 flex flex-col justify-between overflow-hidden tex-grain
+                      ${
+                        item.tone === 'coral'
+                          ? 'bg-coral text-cream'
+                          : item.tone === 'sea'
+                          ? 'bg-sea text-cream'
+                          : item.tone === 'olive'
+                          ? 'bg-olive text-cream'
+                          : 'bg-lilac text-ink'
+                      }
+                    `}
+                  >
+                    <span className="text-3xl md:text-5xl">{item.icon}</span>
                     <div>
-                      <p className="type-label text-white mb-4 tracking-widest">
-                        {pkg.name}
-                      </p>
-                      <p className="type-body text-mute">{pkg.desc}</p>
+                      <p className="type-tag opacity-70 mb-2">FOR</p>
+                      <p className="type-headline">{item.label}</p>
                     </div>
                   </div>
                 </AnimatedReveal>
               ))}
             </div>
 
-            <AnimatedReveal delay={0.1}>
-              <Button href="/packages" variant="secondary">
+            <div className="grid md:grid-cols-2 gap-8 mt-12 max-w-3xl">
+              <AnimatedReveal>
+                <p className="type-body text-smoke">
+                  <span className="type-label text-ink block mb-2">Primary audience</span>
+                  Live music and festivals globally.
+                </p>
+              </AnimatedReveal>
+              <AnimatedReveal delay={0.06}>
+                <p className="type-body text-smoke">
+                  <span className="type-label text-ink block mb-2">Also serves</span>
+                  Entertainment IP, sports rights holders and culture-led brand teams.
+                </p>
+              </AnimatedReveal>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* 05. WHY KURO — big statement */}
+      <section className="bg-ink text-cream on-dark relative tex-grain" aria-labelledby="why-heading">
+        <Container>
+          <div className="py-24 md:py-36 grid md:grid-cols-12 gap-10">
+            <div className="md:col-span-7">
+              <AnimatedReveal>
+                <p className="type-tag text-sun mb-6">✶ WHY KURO / 04</p>
+              </AnimatedReveal>
+              <AnimatedReveal delay={0.1}>
+                <h2 id="why-heading" className="type-display">
+                  The shirt from the summer.
+                </h2>
+              </AnimatedReveal>
+              <AnimatedReveal delay={0.18}>
+                <p className="type-display text-cream/60 mt-2">
+                  <span className="type-serif text-sun normal-case font-normal italic">
+                    The one
+                  </span>{' '}
+                  that never gets thrown away.
+                </p>
+              </AnimatedReveal>
+            </div>
+
+            <AnimatedReveal delay={0.22} className="md:col-span-5 md:pt-4">
+              <div className="space-y-5 type-lede text-cream/80">
+                <p>
+                  Most event merch gets made like an afterthought. KURO does the
+                  opposite.
+                </p>
+                <p className="type-body text-cream/70">
+                  KURO removes the usual chain of agencies, suppliers and handoffs.
+                </p>
+                <p className="type-body text-cream/70">
+                  The result is simple: a jersey that looks right, feels right, arrives
+                  right — and gets kept.
+                </p>
+              </div>
+
+              <div className="mt-10 grid grid-cols-2 gap-4">
+                <div className="bg-cream/5 border border-cream/15 rounded-2xl p-5">
+                  <p className="type-tag text-sun mb-2">CHAIN</p>
+                  <p className="type-headline">Removed.</p>
+                </div>
+                <div className="bg-cream/5 border border-cream/15 rounded-2xl p-5">
+                  <p className="type-tag text-sun mb-2">OUTCOME</p>
+                  <p className="type-headline">One thing.</p>
+                </div>
+              </div>
+            </AnimatedReveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* 06. PACKAGES PREVIEW */}
+      <section
+        className="bg-paper text-ink relative tex-grain"
+        aria-labelledby="packages-heading"
+      >
+        <Container>
+          <div className="py-24 md:py-32">
+            <div className="grid md:grid-cols-12 gap-8 mb-12 md:mb-16">
+              <div className="md:col-span-8">
+                <AnimatedReveal>
+                  <p className="type-tag text-coral mb-6">✶ HOW TO WORK WITH KURO / 05</p>
+                </AnimatedReveal>
+                <AnimatedReveal delay={0.1}>
+                  <h2 id="packages-heading" className="type-display">
+                    Start with the jersey.{' '}
+                    <span className="type-serif text-coral normal-case font-normal italic">
+                      Add the chain.
+                    </span>
+                  </h2>
+                </AnimatedReveal>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5">
+              {[
+                {
+                  n: '01',
+                  name: 'MADE',
+                  tag: 'Designed. Made. Delivered.',
+                  desc: 'Design and manufacture. KURO delivers finished jerseys. Client takes it from there.',
+                  status: 'available' as const,
+                  statusLabel: 'AVAILABLE NOW',
+                  tone: 'coral',
+                  bg: 'bg-coral text-cream',
+                },
+                {
+                  n: '02',
+                  name: 'MADE + SELL',
+                  tag: 'Designed. Made. Sold.',
+                  desc: "Everything in MADE, plus the storefront. Built in the event's brand.",
+                  status: 'soon' as const,
+                  statusLabel: 'COMING SOON',
+                  tone: 'sea',
+                  bg: 'bg-sea text-cream',
+                },
+                {
+                  n: '03',
+                  name: 'MADE + SELL + SHIP',
+                  tag: 'Designed. Made. Sold. Shipped.',
+                  desc: 'The full chain. KURO designs, makes, sells and ships.',
+                  status: 'soon' as const,
+                  statusLabel: 'COMING SOON',
+                  tone: 'olive',
+                  bg: 'bg-olive text-cream',
+                },
+              ].map((pkg, i) => (
+                <AnimatedReveal key={pkg.n} delay={0.08 * i}>
+                  <article
+                    className={`${pkg.bg} relative rounded-2xl p-6 md:p-8 h-full flex flex-col gap-6 tex-grain overflow-hidden`}
+                  >
+                    <div className="flex items-start justify-between">
+                      <span className="type-tag opacity-80">{pkg.n}</span>
+                      <StatusTag variant={pkg.status}>{pkg.statusLabel}</StatusTag>
+                    </div>
+                    <div className="mt-auto">
+                      <h3 className="type-headline mb-2">{pkg.name}</h3>
+                      <p className="type-body opacity-90 mb-3">{pkg.tag}</p>
+                      <p className="type-body opacity-75">{pkg.desc}</p>
+                    </div>
+                  </article>
+                </AnimatedReveal>
+              ))}
+            </div>
+
+            <AnimatedReveal delay={0.18} className="mt-12">
+              <Button href="/packages" variant="primary" size="lg">
                 See the packages
+                <span aria-hidden="true">→</span>
               </Button>
             </AnimatedReveal>
           </div>
         </Container>
       </section>
 
-      {/* 07. FINAL CTA */}
-      <CTASection />
+      {/* 07. CTA — sun */}
+      <CTASection
+        tone="sun"
+        headline="Tell KURO about the event."
+        subline="One short form. Reply within two working days. Department KURO starts here."
+      />
     </>
   )
 }

@@ -19,7 +19,7 @@ export function SiteHeader() {
   const pathname = usePathname()
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60)
+    const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', onScroll, { passive: true })
     onScroll()
     return () => window.removeEventListener('scroll', onScroll)
@@ -40,15 +40,15 @@ export function SiteHeader() {
     <>
       <header
         className={cx(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-400',
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           scrolled || menuOpen
-            ? 'bg-ink/96 backdrop-blur-md border-b border-ash'
+            ? 'bg-cream/90 backdrop-blur-md border-b border-ink/10'
             : 'bg-transparent border-b border-transparent'
         )}
       >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 type-label bg-white text-ink px-4 py-2 z-10"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 type-label bg-ink text-cream px-4 py-2 rounded-full z-10"
         >
           Skip to content
         </a>
@@ -60,42 +60,55 @@ export function SiteHeader() {
           >
             <Link
               href="/"
-              className="type-label text-white hover:text-hair transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+              className="flex items-center gap-2 text-ink hover:opacity-80 transition-opacity focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink"
               aria-label="KURO — home"
             >
-              <span className="text-mute mr-2" aria-hidden="true">黒 ·</span>
-              KURO
+              <span
+                aria-hidden="true"
+                className="w-7 h-7 rounded-full bg-coral grid place-items-center text-cream text-[11px] font-extrabold"
+              >
+                K
+              </span>
+              <span className="font-extrabold tracking-tight text-lg leading-none">
+                KURO
+              </span>
+              <span className="hidden sm:inline type-tag text-smoke ml-1">
+                @deptkuro
+              </span>
             </Link>
 
             {/* Desktop nav */}
-            <div className="hidden md:flex items-center gap-8">
-              {navLinks.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className={cx(
-                    'type-label transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white',
-                    'relative after:absolute after:-bottom-0.5 after:left-0 after:h-px after:bg-white after:transition-all after:duration-200',
-                    pathname === href
-                      ? 'text-white after:w-full'
-                      : 'text-mute hover:text-white after:w-0 hover:after:w-full'
-                  )}
-                >
-                  {label}
-                </Link>
-              ))}
+            <div className="hidden md:flex items-center gap-1">
+              {navLinks.map(({ href, label }) => {
+                const active = pathname === href
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={cx(
+                      'type-label px-4 py-2.5 rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink',
+                      active
+                        ? 'bg-ink text-cream'
+                        : 'text-ink/70 hover:text-ink hover:bg-ink/5'
+                    )}
+                  >
+                    {label}
+                  </Link>
+                )
+              })}
               <Link
                 href="/brief"
-                className="type-label bg-white text-ink px-5 py-3 hover:bg-hair transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+                className="ml-3 inline-flex items-center gap-2 type-label bg-coral text-cream pl-5 pr-4 py-3 rounded-full hover:bg-ember transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink"
               >
                 Start a brief
+                <span aria-hidden="true">→</span>
               </Link>
             </div>
 
             {/* Mobile menu button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden type-label text-white hover:text-hair transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+              className="md:hidden type-label text-ink px-4 py-2 rounded-full bg-ink/5 hover:bg-ink/10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink"
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
@@ -114,26 +127,26 @@ export function SiteHeader() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="fixed inset-0 z-40 bg-black flex flex-col"
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="fixed inset-0 z-40 bg-coral text-cream flex flex-col tex-grain"
             aria-modal="true"
             role="dialog"
             aria-label="Navigation menu"
           >
-            <div className="flex-1 flex flex-col justify-center px-8 pt-20">
+            <div className="flex-1 flex flex-col justify-center px-6 pt-20">
               <motion.nav
                 initial="hidden"
                 animate="visible"
                 variants={{
                   hidden: {},
                   visible: {
-                    transition: { staggerChildren: 0.07, delayChildren: 0.1 },
+                    transition: { staggerChildren: 0.06, delayChildren: 0.1 },
                   },
                 }}
                 aria-label="Mobile navigation"
-                className="space-y-8"
+                className="space-y-2"
               >
-                {[...navLinks, { href: '/brief', label: 'Start a brief' }].map(
+                {[...navLinks, { href: '/brief', label: 'Start a brief →' }].map(
                   ({ href, label }) => (
                     <motion.div
                       key={href}
@@ -148,7 +161,7 @@ export function SiteHeader() {
                     >
                       <Link
                         href={href}
-                        className="type-chapter text-white hover:text-hair transition-colors block"
+                        className="type-display block py-2 hover:text-sun transition-colors"
                         onClick={() => setMenuOpen(false)}
                       >
                         {label}
@@ -159,14 +172,14 @@ export function SiteHeader() {
               </motion.nav>
             </div>
 
-            <div className="px-8 py-10 border-t border-ash flex items-center justify-between">
+            <div className="px-6 py-8 border-t border-cream/20 flex items-center justify-between flex-wrap gap-4">
               <a
                 href="mailto:hello@deptkuro.com"
-                className="type-label text-mute hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-white"
+                className="type-label hover:text-sun transition-colors"
               >
                 hello@deptkuro.com
               </a>
-              <span className="type-label text-ash">@deptkuro</span>
+              <span className="type-label text-cream/70">@deptkuro</span>
             </div>
           </motion.div>
         )}

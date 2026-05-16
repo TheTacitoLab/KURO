@@ -3,18 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --black: #000000;
-  --carbon: #050505;
-  --ink: #0B0B0B;
-  --graphite: #111111;
-  --steel: #1A1A1A;
-  --ash: #2A2A2A;
-  --mid: #4A4A4A;
-  --mute: #777777;
-  --hair: #D8D8D8;
-  --soft: #F2F2F2;
-  --paper: #FAFAFA;
-  --white: #FFFFFF;
+  --ink: #161512;
+  --black: #0E0D0B;
+  --coal: #1D1C19;
+  --soot: #2A2823;
+  --paper: #F3EBDD;
+  --cream: #F6F1E8;
+  --bone: #FCFAF7;
+  --sand: #E4CFA8;
+  --sun: #E7A93B;
+  --coral: #D96B57;
+  --terracotta: #B85C3A;
+  --ember: #A9473A;
+  --sky: #8FB7C9;
+  --sea: #5F8F95;
+  --mint: #A8C3AE;
+  --olive: #7B8460;
+  --lilac: #C5B6D6;
+  --smoke: #5E574C;
+  --dust: #8B8174;
+  --haze: #C9C0AF;
+  --edge: #DCD2BD;
 }
 
 @layer base {
@@ -26,24 +35,29 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    background: var(--cream);
   }
 
   body {
-    background-color: var(--ink);
-    color: var(--white);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
     font-size: 1rem;
-    line-height: 1.65;
+    line-height: 1.55;
   }
 
   ::selection {
-    background-color: var(--white);
-    color: var(--ink);
+    background-color: var(--ink);
+    color: var(--sun);
   }
 
   :focus-visible {
-    outline: 2px solid var(--white);
+    outline: 2px solid var(--ink);
     outline-offset: 3px;
+  }
+
+  .on-dark :focus-visible {
+    outline-color: var(--bone);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -55,27 +69,48 @@
     html {
       scroll-behavior: auto;
     }
+    .animate-marquee,
+    .animate-drift,
+    .animate-slow {
+      animation: none !important;
+    }
   }
 }
 
 @layer utilities {
+  /* Type system — editorial / poster */
+  .type-poster {
+    font-size: clamp(3.75rem, 14vw, 13rem);
+    line-height: 0.86;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
   .type-display {
-    font-size: clamp(3rem, 9vw, 8.5rem);
-    line-height: 0.9;
-    letter-spacing: -0.025em;
+    font-size: clamp(2.75rem, 8.5vw, 7rem);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
     font-weight: 800;
     text-transform: uppercase;
   }
 
   .type-chapter {
-    font-size: clamp(1.75rem, 4vw, 3.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
+    font-size: clamp(1.875rem, 4.5vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+
+  .type-headline {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
     font-weight: 700;
   }
 
   .type-lede {
-    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-size: clamp(1.125rem, 1.85vw, 1.5rem);
     line-height: 1.35;
     letter-spacing: -0.01em;
     font-weight: 400;
@@ -83,21 +118,112 @@
 
   .type-body {
     font-size: 1rem;
-    line-height: 1.65;
-    letter-spacing: 0em;
+    line-height: 1.6;
     font-weight: 400;
   }
 
   .type-label {
     font-size: 0.6875rem;
     line-height: 1;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.16em;
     font-weight: 700;
     text-transform: uppercase;
   }
 
-  /* Light section overrides */
-  .on-light :focus-visible {
-    outline-color: var(--ink);
+  .type-tag {
+    font-size: 0.625rem;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    text-transform: uppercase;
   }
+
+  .type-serif {
+    font-family: var(--font-serif), 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.015em;
+  }
+
+  /* Texture utilities */
+  .tex-grain {
+    position: relative;
+  }
+  .tex-grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .tex-grain-dark::after {
+    mix-blend-mode: screen;
+    opacity: 0.15;
+  }
+
+  .tex-halftone {
+    background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 1.5px);
+    background-size: 6px 6px;
+    opacity: 0.35;
+  }
+
+  .tex-stripes {
+    background-image: repeating-linear-gradient(
+      90deg,
+      currentColor 0,
+      currentColor 8px,
+      transparent 8px,
+      transparent 16px
+    );
+  }
+
+  .tex-pitch {
+    background-image:
+      repeating-linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.04) 0,
+        rgba(0, 0, 0, 0.04) 1px,
+        transparent 1px,
+        transparent 38px
+      );
+  }
+
+  .tex-paper {
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(231, 169, 59, 0.10), transparent 55%),
+      radial-gradient(ellipse at 90% 80%, rgba(184, 92, 58, 0.08), transparent 55%);
+  }
+
+  .edge-torn {
+    -webkit-mask-image: radial-gradient(circle at center, black 99%, transparent 100%);
+  }
+
+  .rotate-tilt {
+    transform: rotate(-1.4deg);
+  }
+  .rotate-tilt-r {
+    transform: rotate(1.2deg);
+  }
+
+  /* Sticky-tape look for poster-like cards */
+  .tape::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 64px;
+    height: 18px;
+    background: rgba(231, 169, 59, 0.55);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-radius: 1px;
+    z-index: 2;
+  }
+
+  /* Hide scrollbar utility for marquees */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }

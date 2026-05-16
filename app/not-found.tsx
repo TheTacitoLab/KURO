@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { buildMetadata } from '@/lib/metadata'
 import { Container } from '@/components/ui/Container'
-import { Rule } from '@/components/ui/Rule'
 import { Button } from '@/components/ui/Button'
 
 export const metadata: Metadata = buildMetadata({
@@ -11,24 +11,36 @@ export const metadata: Metadata = buildMetadata({
 
 export default function NotFound() {
   return (
-    <section className="bg-black min-h-screen flex items-center" aria-labelledby="notfound-heading">
-      <Container>
-        <div className="py-20 md:py-28">
-          <p className="type-display text-steel mb-6" aria-hidden="true">
-            404
-          </p>
-          <Rule weight="heavy" className="mb-10 max-w-[80px]" />
-          <h1 id="notfound-heading" className="type-chapter text-white mb-10 max-w-xl">
-            The page is not here. The studio is.
-          </h1>
-          <div className="flex flex-wrap gap-4">
-            <Button href="/" variant="primary">
-              Return to KURO
-            </Button>
-            <Button href="/brief" variant="secondary">
-              Start a brief
-            </Button>
-          </div>
+    <section
+      className="bg-coral text-cream min-h-screen flex items-center relative overflow-hidden tex-grain pt-32"
+      aria-labelledby="notfound-heading"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-32 -right-20 w-[520px] h-[520px] rounded-full bg-sun/70 blur-3xl"
+      />
+      <Container className="relative">
+        <p className="type-tag mb-6">✶ ERROR</p>
+        <p
+          className="font-extrabold leading-none tracking-tight mb-8 select-none"
+          style={{ fontSize: 'clamp(8rem, 26vw, 22rem)' }}
+          aria-hidden="true"
+        >
+          404
+        </p>
+        <h1 id="notfound-heading" className="type-chapter mb-10 max-w-2xl">
+          The page is not here. The studio is.
+        </h1>
+        <div className="flex flex-wrap gap-4">
+          <Button href="/" variant="sun" size="lg">
+            Return to KURO →
+          </Button>
+          <Link
+            href="/brief"
+            className="inline-flex items-center type-label rounded-full px-8 py-4 border border-cream text-cream hover:bg-cream hover:text-ink transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-cream"
+          >
+            Start a brief
+          </Link>
         </div>
       </Container>
     </section>

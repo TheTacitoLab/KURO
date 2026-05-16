@@ -5,9 +5,9 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://deptkuro.com'
 export const siteMetadata = {
   siteName: 'KURO',
   baseUrl: BASE_URL,
-  defaultTitle: 'KURO — Black Label Jersey Studio',
+  defaultTitle: 'KURO — Limited Edition Football Jerseys',
   defaultDescription:
-    'Limited edition football jerseys made to remember. Designed and manufactured for festivals, tours, brand activations and live events.',
+    'KURO designs and manufactures limited edition football jerseys for festivals, tours, brand activations and live events. Made to remember.',
   ogImage: `${BASE_URL}/images/og-image.jpg`,
   twitter: '@deptkuro',
 }
@@ -23,22 +23,22 @@ export function buildMetadata(overrides?: Partial<Metadata>): Metadata {
     openGraph: {
       type: 'website',
       siteName: siteMetadata.siteName,
-      title: 'KURO — Black Label Jersey Studio',
-      description: 'A dedicated department for limited edition football jerseys.',
+      title: siteMetadata.defaultTitle,
+      description: siteMetadata.defaultDescription,
       images: [
         {
           url: siteMetadata.ogImage,
           width: 1200,
           height: 630,
-          alt: 'KURO — Black Label Jersey Studio',
+          alt: 'KURO — Limited Edition Football Jerseys',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
       site: siteMetadata.twitter,
-      title: 'KURO — Black Label Jersey Studio',
-      description: 'A dedicated department for limited edition football jerseys.',
+      title: siteMetadata.defaultTitle,
+      description: siteMetadata.defaultDescription,
     },
     robots: {
       index: true,

@@ -10,13 +10,20 @@ export function StatusTag({ children, variant = 'available', className }: Status
   return (
     <span
       className={cx(
-        'type-label inline-block px-3 py-1.5 border',
+        'type-tag inline-flex items-center gap-2 px-3 py-1.5 rounded-full',
         variant === 'available'
-          ? 'border-white text-white'
-          : 'border-ash text-mute',
+          ? 'bg-mint/40 text-ink border border-ink/15'
+          : 'bg-cream text-smoke border border-ink/15',
         className
       )}
     >
+      <span
+        className={cx(
+          'inline-block w-1.5 h-1.5 rounded-full',
+          variant === 'available' ? 'bg-olive animate-pulse' : 'bg-dust'
+        )}
+        aria-hidden="true"
+      />
       {children}
     </span>
   )
