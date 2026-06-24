@@ -12,12 +12,12 @@ export const metadata: Metadata = buildMetadata({
 export default function NotFound() {
   return (
     <section
-      className="bg-coral text-cream min-h-screen flex items-center relative overflow-hidden tex-grain pt-32"
+      className="bg-coral text-white min-h-screen flex items-center relative overflow-hidden tex-grain pt-32"
       aria-labelledby="notfound-heading"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-32 -right-20 w-[520px] h-[520px] rounded-full bg-sun/70 blur-3xl"
+        className="pointer-events-none absolute -top-32 -right-20 w-[520px] h-[520px] rounded-full bg-flare/70 blur-3xl"
       />
       <Container className="relative">
         <p className="type-tag mb-6">✶ ERROR</p>
@@ -37,7 +37,7 @@ export default function NotFound() {
           </Button>
           <Link
             href="/brief"
-            className="inline-flex items-center type-label rounded-full px-8 py-4 border border-cream text-cream hover:bg-cream hover:text-ink transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-cream"
+            className="inline-flex items-center type-label rounded-full px-8 py-4 border border-white text-white hover:bg-white hover:text-void transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
           >
             Start a brief
           </Link>

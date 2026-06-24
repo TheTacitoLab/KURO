@@ -8,13 +8,14 @@ interface MarqueeStripProps {
   size?: 'sm' | 'md' | 'lg'
 }
 
+// Tone keys kept stable for call sites; values remapped to the OBRA palette.
 const toneMap = {
-  ink: 'bg-ink text-cream',
-  sun: 'bg-sun text-ink',
-  coral: 'bg-coral text-cream',
-  cream: 'bg-cream text-ink border-y border-ink/10',
-  sea: 'bg-sea text-cream',
-  olive: 'bg-olive text-cream',
+  ink: 'bg-obsidian text-white',
+  sun: 'bg-flare text-void',
+  coral: 'bg-coral text-white',
+  cream: 'bg-void text-white border-y border-line',
+  sea: 'bg-electric text-white',
+  olive: 'bg-violet text-white',
 }
 
 const sizeMap = {

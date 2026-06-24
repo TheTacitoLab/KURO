@@ -37,7 +37,7 @@ export default function HomePage() {
 
       {/* 02. POSITIONING */}
       <section
-        className="bg-cream text-ink relative tex-grain"
+        className="bg-void text-white relative tex-grain"
         aria-labelledby="positioning-heading"
       >
         <Container>
@@ -49,7 +49,7 @@ export default function HomePage() {
               <AnimatedReveal delay={0.08}>
                 <h2 id="positioning-heading" className="type-display">
                   The jersey that{' '}
-                  <span className="type-serif text-ember normal-case font-normal lowercase">
+                  <span className="type-serif text-coral normal-case font-normal lowercase">
                     outlives
                   </span>{' '}
                   the event.
@@ -58,17 +58,17 @@ export default function HomePage() {
             </div>
 
             <AnimatedReveal delay={0.16} className="md:col-span-5">
-              <div className="space-y-5 type-lede text-ink/80">
+              <div className="space-y-5 type-lede text-white/80">
                 <p>
                   KURO designs and manufactures limited edition football jerseys for the
                   moments people remember.
                 </p>
-                <p className="type-body text-smoke">
+                <p className="type-body text-ash">
                   Festivals. Tours. Brand activations. Live events.
                 </p>
-                <p className="type-body text-smoke">
+                <p className="type-body text-ash">
                   The event gets the drop.{' '}
-                  <span className="text-ink">The crowd gets the jersey.</span> The jersey
+                  <span className="text-white">The crowd gets the jersey.</span> The jersey
                   gets kept.
                 </p>
               </div>
@@ -79,7 +79,7 @@ export default function HomePage() {
 
       {/* 03. WHAT KURO MAKES — three colored tiles */}
       <section
-        className="bg-paper text-ink relative tex-grain"
+        className="bg-obsidian text-white relative tex-grain"
         aria-labelledby="makes-heading"
       >
         <Container>
@@ -87,19 +87,19 @@ export default function HomePage() {
             <div className="grid md:grid-cols-12 gap-8 mb-12 md:mb-16">
               <div className="md:col-span-7">
                 <AnimatedReveal>
-                  <p className="type-tag text-sea mb-6">✶ WHAT KURO MAKES / 02</p>
+                  <p className="type-tag text-electric mb-6">✶ WHAT KURO MAKES / 02</p>
                 </AnimatedReveal>
                 <AnimatedReveal delay={0.1}>
                   <h2 id="makes-heading" className="type-display">
                     Not merch.{' '}
-                    <span className="type-serif text-sea normal-case font-normal italic">
+                    <span className="type-serif text-electric normal-case font-normal">
                       A memory.
                     </span>
                   </h2>
                 </AnimatedReveal>
               </div>
               <AnimatedReveal delay={0.18} className="md:col-span-5 md:pt-2">
-                <p className="type-body text-smoke max-w-md">
+                <p className="type-body text-ash max-w-md">
                   Three things make a KURO jersey what it is. Edition. Build. Intent.
                 </p>
               </AnimatedReveal>
@@ -173,7 +173,7 @@ export default function HomePage() {
 
       {/* 04. WHO IT IS FOR — colourful blocks */}
       <section
-        className="bg-cream text-ink relative tex-grain"
+        className="bg-void text-white relative tex-grain"
         aria-labelledby="who-heading"
       >
         <Container>
@@ -181,13 +181,13 @@ export default function HomePage() {
             <div className="grid md:grid-cols-12 gap-8 mb-12">
               <div className="md:col-span-8">
                 <AnimatedReveal>
-                  <p className="type-tag text-olive mb-6">✶ WHO IT IS FOR / 03</p>
+                  <p className="type-tag text-violet mb-6">✶ WHO IT IS FOR / 03</p>
                 </AnimatedReveal>
                 <AnimatedReveal delay={0.1}>
                   <h2 id="who-heading" className="type-display">
                     One event.{' '}
                     <span className="text-coral">One jersey.</span>{' '}
-                    <span className="text-sea">One keeper.</span>
+                    <span className="text-electric">One keeper.</span>
                   </h2>
                 </AnimatedReveal>
               </div>
@@ -196,9 +196,9 @@ export default function HomePage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {[
                 { label: 'Festivals', tone: 'coral', icon: '✶' },
-                { label: 'Tours', tone: 'sea', icon: '✦' },
-                { label: 'Brand activations', tone: 'olive', icon: '✺' },
-                { label: 'Live events', tone: 'lilac', icon: '✷' },
+                { label: 'Tours', tone: 'electric', icon: '✦' },
+                { label: 'Brand activations', tone: 'magenta', icon: '✺' },
+                { label: 'Live events', tone: 'violet', icon: '✷' },
               ].map((item, i) => (
                 <AnimatedReveal key={item.label} delay={0.06 * i}>
                   <div
@@ -206,12 +206,12 @@ export default function HomePage() {
                       relative aspect-[4/5] rounded-2xl p-5 md:p-6 flex flex-col justify-between overflow-hidden tex-grain
                       ${
                         item.tone === 'coral'
-                          ? 'bg-coral text-cream'
-                          : item.tone === 'sea'
-                          ? 'bg-sea text-cream'
-                          : item.tone === 'olive'
-                          ? 'bg-olive text-cream'
-                          : 'bg-lilac text-ink'
+                          ? 'bg-coral text-white'
+                          : item.tone === 'electric'
+                          ? 'bg-electric text-white'
+                          : item.tone === 'magenta'
+                          ? 'bg-magenta text-white'
+                          : 'bg-violet text-white'
                       }
                     `}
                   >
@@ -227,14 +227,14 @@ export default function HomePage() {
 
             <div className="grid md:grid-cols-2 gap-8 mt-12 max-w-3xl">
               <AnimatedReveal>
-                <p className="type-body text-smoke">
-                  <span className="type-label text-ink block mb-2">Primary audience</span>
+                <p className="type-body text-ash">
+                  <span className="type-label text-white block mb-2">Primary audience</span>
                   Live music and festivals globally.
                 </p>
               </AnimatedReveal>
               <AnimatedReveal delay={0.06}>
-                <p className="type-body text-smoke">
-                  <span className="type-label text-ink block mb-2">Also serves</span>
+                <p className="type-body text-ash">
+                  <span className="type-label text-white block mb-2">Also serves</span>
                   Entertainment IP, sports rights holders and culture-led brand teams.
                 </p>
               </AnimatedReveal>
@@ -244,12 +244,12 @@ export default function HomePage() {
       </section>
 
       {/* 05. WHY KURO — big statement */}
-      <section className="bg-ink text-cream on-dark relative tex-grain" aria-labelledby="why-heading">
+      <section className="bg-obsidian text-white on-dark relative tex-grain" aria-labelledby="why-heading">
         <Container>
           <div className="py-24 md:py-36 grid md:grid-cols-12 gap-10">
             <div className="md:col-span-7">
               <AnimatedReveal>
-                <p className="type-tag text-sun mb-6">✶ WHY KURO / 04</p>
+                <p className="type-tag text-flare mb-6">✶ WHY KURO / 04</p>
               </AnimatedReveal>
               <AnimatedReveal delay={0.1}>
                 <h2 id="why-heading" className="type-display">
@@ -257,8 +257,8 @@ export default function HomePage() {
                 </h2>
               </AnimatedReveal>
               <AnimatedReveal delay={0.18}>
-                <p className="type-display text-cream/60 mt-2">
-                  <span className="type-serif text-sun normal-case font-normal italic">
+                <p className="type-display text-white/60 mt-2">
+                  <span className="type-serif text-flare normal-case font-normal">
                     The one
                   </span>{' '}
                   that never gets thrown away.
@@ -267,27 +267,27 @@ export default function HomePage() {
             </div>
 
             <AnimatedReveal delay={0.22} className="md:col-span-5 md:pt-4">
-              <div className="space-y-5 type-lede text-cream/80">
+              <div className="space-y-5 type-lede text-white/80">
                 <p>
                   Most event merch gets made like an afterthought. KURO does the
                   opposite.
                 </p>
-                <p className="type-body text-cream/70">
+                <p className="type-body text-white/70">
                   KURO removes the usual chain of agencies, suppliers and handoffs.
                 </p>
-                <p className="type-body text-cream/70">
+                <p className="type-body text-white/70">
                   The result is simple: a jersey that looks right, feels right, arrives
                   right — and gets kept.
                 </p>
               </div>
 
               <div className="mt-10 grid grid-cols-2 gap-4">
-                <div className="bg-cream/5 border border-cream/15 rounded-2xl p-5">
-                  <p className="type-tag text-sun mb-2">CHAIN</p>
+                <div className="bg-white/5 border border-white/15 rounded-2xl p-5">
+                  <p className="type-tag text-flare mb-2">CHAIN</p>
                   <p className="type-headline">Removed.</p>
                 </div>
-                <div className="bg-cream/5 border border-cream/15 rounded-2xl p-5">
-                  <p className="type-tag text-sun mb-2">OUTCOME</p>
+                <div className="bg-white/5 border border-white/15 rounded-2xl p-5">
+                  <p className="type-tag text-flare mb-2">OUTCOME</p>
                   <p className="type-headline">One thing.</p>
                 </div>
               </div>
@@ -298,7 +298,7 @@ export default function HomePage() {
 
       {/* 06. PACKAGES PREVIEW */}
       <section
-        className="bg-paper text-ink relative tex-grain"
+        className="bg-obsidian text-white relative tex-grain"
         aria-labelledby="packages-heading"
       >
         <Container>
@@ -311,7 +311,7 @@ export default function HomePage() {
                 <AnimatedReveal delay={0.1}>
                   <h2 id="packages-heading" className="type-display">
                     Start with the jersey.{' '}
-                    <span className="type-serif text-coral normal-case font-normal italic">
+                    <span className="type-serif text-coral normal-case font-normal">
                       Add the chain.
                     </span>
                   </h2>
@@ -329,7 +329,7 @@ export default function HomePage() {
                   status: 'available' as const,
                   statusLabel: 'AVAILABLE NOW',
                   tone: 'coral',
-                  bg: 'bg-coral text-cream',
+                  bg: 'bg-coral text-white',
                 },
                 {
                   n: '02',
@@ -338,8 +338,8 @@ export default function HomePage() {
                   desc: "Everything in MADE, plus the storefront. Built in the event's brand.",
                   status: 'soon' as const,
                   statusLabel: 'COMING SOON',
-                  tone: 'sea',
-                  bg: 'bg-sea text-cream',
+                  tone: 'electric',
+                  bg: 'bg-electric text-white',
                 },
                 {
                   n: '03',
@@ -348,8 +348,8 @@ export default function HomePage() {
                   desc: 'The full chain. KURO designs, makes, sells and ships.',
                   status: 'soon' as const,
                   statusLabel: 'COMING SOON',
-                  tone: 'olive',
-                  bg: 'bg-olive text-cream',
+                  tone: 'magenta',
+                  bg: 'bg-magenta text-white',
                 },
               ].map((pkg, i) => (
                 <AnimatedReveal key={pkg.n} delay={0.08 * i}>
@@ -380,7 +380,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 07. CTA — sun */}
+      {/* 07. CTA */}
       <CTASection
         tone="sun"
         headline="Tell KURO about the event."

@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/Button'
 import { StatusTag } from '@/components/ui/StatusTag'
 import { cx } from '@/lib/utils'
 
-type Tone = 'coral' | 'sea' | 'olive' | 'lilac' | 'sun' | 'terracotta'
+type Tone = 'coral' | 'electric' | 'magenta' | 'violet' | 'flare'
 
 interface PackageCardProps {
   number: string
@@ -19,12 +19,11 @@ interface PackageCardProps {
 }
 
 const toneMap: Record<Tone, { header: string; ink: string; sub: string; chip: string }> = {
-  coral: { header: 'bg-coral text-cream', ink: 'text-cream', sub: 'text-cream/80', chip: 'bg-cream/20 text-cream' },
-  sea: { header: 'bg-sea text-cream', ink: 'text-cream', sub: 'text-cream/80', chip: 'bg-cream/20 text-cream' },
-  olive: { header: 'bg-olive text-cream', ink: 'text-cream', sub: 'text-cream/80', chip: 'bg-cream/20 text-cream' },
-  lilac: { header: 'bg-lilac text-ink', ink: 'text-ink', sub: 'text-ink/70', chip: 'bg-ink/10 text-ink' },
-  sun: { header: 'bg-sun text-ink', ink: 'text-ink', sub: 'text-ink/70', chip: 'bg-ink/10 text-ink' },
-  terracotta: { header: 'bg-terracotta text-cream', ink: 'text-cream', sub: 'text-cream/80', chip: 'bg-cream/20 text-cream' },
+  coral: { header: 'bg-coral text-white', ink: 'text-white', sub: 'text-white/80', chip: 'bg-white/20 text-white' },
+  electric: { header: 'bg-electric text-white', ink: 'text-white', sub: 'text-white/80', chip: 'bg-white/20 text-white' },
+  magenta: { header: 'bg-magenta text-white', ink: 'text-white', sub: 'text-white/80', chip: 'bg-white/20 text-white' },
+  violet: { header: 'bg-violet text-white', ink: 'text-white', sub: 'text-white/80', chip: 'bg-white/20 text-white' },
+  flare: { header: 'bg-flare text-void', ink: 'text-void', sub: 'text-void/70', chip: 'bg-void/15 text-void' },
 }
 
 export function PackageCard({
@@ -45,7 +44,7 @@ export function PackageCard({
   return (
     <article
       className={cx(
-        'relative bg-bone border border-ink/10 rounded-3xl flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-20px_rgba(0,0,0,0.18)]',
+        'relative bg-slate border border-line rounded-3xl flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_50px_-10px_rgba(62,83,216,0.45)]',
         className
       )}
     >
@@ -63,14 +62,14 @@ export function PackageCard({
 
       {/* Body */}
       <div className="p-6 md:p-8 flex-1 flex flex-col">
-        <p className="type-body text-smoke">{description}</p>
+        <p className="type-body text-ash">{description}</p>
 
         {includes && includes.length > 0 && (
-          <ul className="mt-7 space-y-3 pt-7 border-t border-ink/10">
+          <ul className="mt-7 space-y-3 pt-7 border-t border-line">
             {includes.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 type-body text-ink/80">
+              <li key={i} className="flex items-start gap-3 type-body text-white/80">
                 <span
-                  className="inline-block w-1.5 h-1.5 rounded-full bg-ember mt-[10px] shrink-0"
+                  className="inline-block w-1.5 h-1.5 rounded-full bg-coral mt-[10px] shrink-0"
                   aria-hidden="true"
                 />
                 {item}

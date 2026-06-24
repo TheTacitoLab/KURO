@@ -28,13 +28,13 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative bg-cream text-ink overflow-hidden tex-grain pt-24 md:pt-28"
+      className="relative bg-void text-white overflow-hidden tex-grain pt-24 md:pt-28"
       aria-label="Hero"
     >
-      {/* Sun glow */}
+      {/* Accent glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-32 -right-32 w-[640px] h-[640px] rounded-full bg-sun opacity-70 blur-2xl"
+        className="pointer-events-none absolute -top-32 -right-32 w-[640px] h-[640px] rounded-full bg-flare opacity-70 blur-2xl"
       />
       <div
         aria-hidden="true"
@@ -48,14 +48,14 @@ export function HeroSection() {
           className="flex items-center justify-between flex-wrap gap-3 pb-8"
         >
           <div className="flex items-center gap-3">
-            <span className="type-tag bg-ink text-cream px-3 py-1.5 rounded-full">
+            <span className="type-tag bg-slate text-white px-3 py-1.5 rounded-full">
               EDITION · 2026
             </span>
-            <span className="type-tag text-smoke">
+            <span className="type-tag text-ash">
               DEPARTMENT KURO · HAMPSHIRE ↔ GLOBAL
             </span>
           </div>
-          <span className="type-tag text-smoke hidden md:inline">
+          <span className="type-tag text-ash hidden md:inline">
             ✶ FESTIVALS · TOURS · DROPS · LIVE EVENTS
           </span>
         </motion.div>
@@ -65,7 +65,7 @@ export function HeroSection() {
           {/* Display headline */}
           <div className="md:col-span-12">
             <h1
-              className="type-poster text-ink"
+              className="type-poster text-white"
               aria-label="Limited edition football jerseys made to remember."
             >
               <motion.span {...line(0.15)} className="block">
@@ -74,7 +74,7 @@ export function HeroSection() {
 
               <motion.span {...line(0.25)} className="block">
                 <span className="text-coral">EDITION</span>{' '}
-                <span className="type-serif text-ember normal-case font-normal italic tracking-tight">
+                <span className="type-serif text-coral normal-case font-normal tracking-tight">
                   football
                 </span>
               </motion.span>
@@ -84,9 +84,9 @@ export function HeroSection() {
               </motion.span>
 
               <motion.span {...line(0.45)} className="block">
-                <span className="text-smoke">MADE</span>{' '}
-                <span className="text-sea">TO</span>{' '}
-                <span className="text-ember">REMEMBER.</span>
+                <span className="text-ash">MADE</span>{' '}
+                <span className="text-electric">TO</span>{' '}
+                <span className="text-coral">REMEMBER.</span>
               </motion.span>
             </h1>
           </div>
@@ -96,11 +96,11 @@ export function HeroSection() {
             {...fade(0.6)}
             className="md:col-span-4 md:col-start-1 mt-6"
           >
-            <p className="type-lede text-ink max-w-md">
+            <p className="type-lede text-white max-w-md">
               KURO designs and manufactures limited edition football jerseys for festivals,
               tours, brand activations and live events.
             </p>
-            <p className="type-body text-smoke max-w-md mt-4">
+            <p className="type-body text-ash max-w-md mt-4">
               The event ends. The jersey stays.
             </p>
 
@@ -111,7 +111,7 @@ export function HeroSection() {
               </Button>
               <Link
                 href="/process"
-                className="type-label text-ink hover:text-ember transition-colors underline underline-offset-4 decoration-2 decoration-ember/40 hover:decoration-ember"
+                className="type-label text-white hover:text-coral transition-colors underline underline-offset-4 decoration-2 decoration-coral/40 hover:decoration-coral"
               >
                 See how KURO works
               </Link>
@@ -125,7 +125,7 @@ export function HeroSection() {
           >
             <div className="relative rotate-tilt-r animate-drift">
               <div
-                className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-coral text-cream tex-grain shadow-[0_30px_60px_-20px_rgba(169,71,58,0.45)]"
+                className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-coral text-white tex-grain shadow-[0_0_60px_-5px_rgba(62,83,216,0.5)]"
                 role="img"
                 aria-label="KURO limited edition jersey 001"
               >
@@ -139,7 +139,7 @@ export function HeroSection() {
                   }}
                 />
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                  <span className="type-tag bg-cream/15 px-2 py-1 rounded-full backdrop-blur-sm">
+                  <span className="type-tag bg-white/15 px-2 py-1 rounded-full backdrop-blur-sm">
                     KURO · LTD
                   </span>
                   <span className="type-tag">EDITION / 001</span>
@@ -158,16 +158,16 @@ export function HeroSection() {
                     10
                   </span>
                 </div>
-                <div className="absolute left-0 right-0 bottom-0 p-5 border-t border-cream/20">
+                <div className="absolute left-0 right-0 bottom-0 p-5 border-t border-white/20">
                   <p className="type-label">THE SUMMER JERSEY</p>
-                  <p className="type-tag text-cream/70 mt-1">
+                  <p className="type-tag text-white/70 mt-1">
                     HOMEMADE COTTON · TERRACOTTA · SUN
                   </p>
                 </div>
               </div>
 
               {/* Sticker */}
-              <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-sun text-ink grid place-items-center rotate-[-12deg] shadow-md">
+              <div className="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-flare text-void grid place-items-center rotate-[-12deg] shadow-md">
                 <div className="text-center">
                   <p className="type-tag">DROP</p>
                   <p className="font-extrabold text-lg leading-none mt-1">N°1</p>
@@ -181,7 +181,7 @@ export function HeroSection() {
             {...fade(0.75)}
             className="md:col-span-4 md:col-start-1 md:row-start-2 self-end mt-10 md:mt-0"
           >
-            <p className="type-serif text-2xl md:text-3xl text-ink/80 leading-snug">
+            <p className="type-serif text-2xl md:text-3xl text-white/80 leading-snug">
               &ldquo;Not every souvenir gets worn.&rdquo;
             </p>
           </motion.div>

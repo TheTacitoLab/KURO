@@ -8,38 +8,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Structural
-        ink: '#161512',
-        black: '#0E0D0B',
-        coal: '#1D1C19',
-        soot: '#2A2823',
+        // OBRA palette — dark electronic / house. Keep in sync with styles/globals.css :root.
+        // Surfaces (dark → lighter)
+        void: '#0E1311',      // page background, deepest
+        obsidian: '#171C1A',  // primary dark surface / former dark sections
+        slate: '#202624',     // surface alt, cards, form fields
+        line: '#2E3633',      // borders, dividers
 
-        // Paper / cream backgrounds
-        paper: '#F3EBDD',
-        cream: '#F6F1E8',
-        bone: '#FCFAF7',
-        sand: '#E4CFA8',
+        // Text
+        white: '#FFFFFF',     // primary text
+        ash: '#B6BBBA',       // secondary text
+        mute: '#6E7471',      // tertiary text, muted labels
 
-        // Festival palette
-        sun: '#E7A93B',
-        coral: '#D96B57',
-        terracotta: '#B85C3A',
-        ember: '#A9473A',
-        sky: '#8FB7C9',
-        sea: '#5F8F95',
-        mint: '#A8C3AE',
-        olive: '#7B8460',
-        lilac: '#C5B6D6',
-
-        // Utility tones (on cream)
-        smoke: '#5E574C',
-        dust: '#8B8174',
-        haze: '#C9C0AF',
-        edge: '#DCD2BD',
+        // Accents
+        electric: '#3E53D8',  // primary accent (cobalt-indigo)
+        magenta: '#D44078',   // accent (raspberry)
+        coral: '#E85F40',     // accent (coral-red)
+        flare: '#EF9568',     // peach highlight
+        violet: '#7E50A4',    // fifth accent
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        serif: ['var(--font-serif)', 'Instrument Serif', 'Georgia', 'serif'],
+        // Display / chapter / headline type. TODO: load Breul Grotesk via next/font/local
+        // (place .woff2 in /public/fonts and set --font-display). Falls back to the sans for now.
+        display: ['var(--font-display)', 'var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        // Small labels + technical text — club/flyer monospace.
+        mono: ['var(--font-mono)', 'Space Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       spacing: {
         'side-desktop': '64px',

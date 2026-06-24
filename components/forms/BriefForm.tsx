@@ -24,9 +24,9 @@ const volumeOptions = [
 ]
 
 const inputBase =
-  'w-full bg-bone border border-ink/15 rounded-xl px-4 py-3.5 type-body text-ink placeholder:text-dust focus:outline-none focus:border-ink focus:ring-2 focus:ring-sun/50 transition'
+  'w-full bg-slate border border-line rounded-xl px-4 py-3.5 type-body text-white placeholder:text-mute focus:outline-none focus:border-white focus:ring-2 focus:ring-electric/50 transition'
 
-const labelBase = 'type-label text-smoke block mb-2'
+const labelBase = 'type-label text-ash block mb-2'
 
 export function BriefForm() {
   const [status, setStatus] = useState<FormStatus>('idle')
@@ -86,7 +86,7 @@ export function BriefForm() {
       <div
         role="status"
         aria-live="polite"
-        className="rounded-3xl bg-sun text-ink p-8 md:p-12 tex-grain relative overflow-hidden"
+        className="rounded-3xl bg-flare text-void p-8 md:p-12 tex-grain relative overflow-hidden"
       >
         <p className="type-tag mb-4">RECEIVED ✶</p>
         <p className="type-display mb-4">Thanks.</p>
@@ -97,7 +97,7 @@ export function BriefForm() {
           If the event is time-sensitive, email{' '}
           <a
             href="mailto:hello@deptkuro.com"
-            className="underline underline-offset-4 font-semibold hover:text-ember transition-colors"
+            className="underline underline-offset-4 font-semibold hover:text-coral transition-colors"
           >
             hello@deptkuro.com
           </a>{' '}
@@ -112,7 +112,7 @@ export function BriefForm() {
       onSubmit={handleSubmit}
       noValidate
       aria-label="Start a brief"
-      className="bg-bone rounded-3xl border border-ink/10 p-6 md:p-10"
+      className="bg-slate rounded-3xl border border-line p-6 md:p-10"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         {/* Name */}
@@ -214,8 +214,8 @@ export function BriefForm() {
                   className={cx(
                     'border rounded-full py-3 px-4 type-label cursor-pointer text-center transition-all',
                     data.volume === opt.value
-                      ? 'border-ink bg-ink text-cream'
-                      : 'border-ink/20 text-smoke hover:border-ink hover:text-ink'
+                      ? 'border-white bg-white text-void'
+                      : 'border-line text-ash hover:border-white hover:text-white'
                   )}
                 >
                   <input
@@ -276,7 +276,7 @@ export function BriefForm() {
         <div
           role="alert"
           aria-live="assertive"
-          className="mt-8 rounded-2xl bg-coral/10 border border-coral text-ink p-4"
+          className="mt-8 rounded-2xl bg-coral/10 border border-coral text-white p-4"
         >
           <p className="type-body">
             Something went wrong. Try again, or email{' '}
@@ -292,7 +292,7 @@ export function BriefForm() {
       )}
 
       <div className="mt-10 flex items-center justify-between flex-wrap gap-4">
-        <p className="type-tag text-smoke">REPLY WITHIN TWO WORKING DAYS</p>
+        <p className="type-tag text-ash">REPLY WITHIN TWO WORKING DAYS</p>
         <Button
           type="submit"
           variant="coral"

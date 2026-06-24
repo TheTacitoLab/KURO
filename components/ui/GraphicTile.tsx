@@ -13,17 +13,19 @@ interface GraphicTileProps {
   children?: React.ReactNode
 }
 
+// Tone keys kept stable for call sites; values remapped to the OBRA palette.
+// Light accents (flare, ash) take dark text; dark accents take white text.
 const toneMap: Record<Tone, { bg: string; text: string; sub: string }> = {
-  sun: { bg: 'bg-sun', text: 'text-ink', sub: 'text-ink/70' },
-  coral: { bg: 'bg-coral', text: 'text-cream', sub: 'text-cream/80' },
-  sea: { bg: 'bg-sea', text: 'text-cream', sub: 'text-cream/80' },
-  mint: { bg: 'bg-mint', text: 'text-ink', sub: 'text-ink/70' },
-  olive: { bg: 'bg-olive', text: 'text-cream', sub: 'text-cream/80' },
-  lilac: { bg: 'bg-lilac', text: 'text-ink', sub: 'text-ink/70' },
-  sand: { bg: 'bg-sand', text: 'text-ink', sub: 'text-ink/70' },
-  terracotta: { bg: 'bg-terracotta', text: 'text-cream', sub: 'text-cream/80' },
-  ink: { bg: 'bg-ink', text: 'text-cream', sub: 'text-cream/70' },
-  cream: { bg: 'bg-cream border border-ink/15', text: 'text-ink', sub: 'text-smoke' },
+  sun: { bg: 'bg-flare', text: 'text-void', sub: 'text-void/70' },
+  coral: { bg: 'bg-coral', text: 'text-white', sub: 'text-white/80' },
+  sea: { bg: 'bg-electric', text: 'text-white', sub: 'text-white/80' },
+  mint: { bg: 'bg-electric', text: 'text-white', sub: 'text-white/80' },
+  olive: { bg: 'bg-violet', text: 'text-white', sub: 'text-white/80' },
+  lilac: { bg: 'bg-violet', text: 'text-white', sub: 'text-white/80' },
+  sand: { bg: 'bg-ash', text: 'text-void', sub: 'text-void/70' },
+  terracotta: { bg: 'bg-coral', text: 'text-white', sub: 'text-white/80' },
+  ink: { bg: 'bg-obsidian', text: 'text-white', sub: 'text-white/70' },
+  cream: { bg: 'bg-void border border-line', text: 'text-white', sub: 'text-ash' },
 }
 
 export function GraphicTile({

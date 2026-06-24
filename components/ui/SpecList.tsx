@@ -12,9 +12,9 @@ interface SpecListProps {
 }
 
 export function SpecList({ items, className, theme = 'light' }: SpecListProps) {
-  const dividerClass = theme === 'dark' ? 'divide-cream/15' : 'divide-ink/15'
-  const labelClass = theme === 'dark' ? 'text-cream/70' : 'text-smoke'
-  const valueClass = theme === 'dark' ? 'text-cream' : 'text-ink'
+  const dividerClass = theme === 'dark' ? 'divide-white/15' : 'divide-line'
+  const labelClass = theme === 'dark' ? 'text-white/70' : 'text-ash'
+  const valueClass = theme === 'dark' ? 'text-white' : 'text-white'
 
   return (
     <ul className={cx('space-y-0 divide-y', dividerClass, className)}>
@@ -28,7 +28,8 @@ export function SpecList({ items, className, theme = 'light' }: SpecListProps) {
               {item.label}
             </span>
           )}
-          <span className={cx('type-body text-right font-medium', valueClass)}>
+          {/* Technical value — monospace. */}
+          <span className={cx('type-body font-mono text-right font-medium', valueClass)}>
             {item.value}
           </span>
         </li>

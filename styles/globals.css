@@ -3,27 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --ink: #161512;
-  --black: #0E0D0B;
-  --coal: #1D1C19;
-  --soot: #2A2823;
-  --paper: #F3EBDD;
-  --cream: #F6F1E8;
-  --bone: #FCFAF7;
-  --sand: #E4CFA8;
-  --sun: #E7A93B;
-  --coral: #D96B57;
-  --terracotta: #B85C3A;
-  --ember: #A9473A;
-  --sky: #8FB7C9;
-  --sea: #5F8F95;
-  --mint: #A8C3AE;
-  --olive: #7B8460;
-  --lilac: #C5B6D6;
-  --smoke: #5E574C;
-  --dust: #8B8174;
-  --haze: #C9C0AF;
-  --edge: #DCD2BD;
+  /* OBRA palette — dark electronic / house. Keep in sync with tailwind.config.ts colors. */
+  --void: #0E1311;
+  --obsidian: #171C1A;
+  --slate: #202624;
+  --line: #2E3633;
+  --white: #FFFFFF;
+  --ash: #B6BBBA;
+  --mute: #6E7471;
+  --electric: #3E53D8;
+  --magenta: #D44078;
+  --coral: #E85F40;
+  --flare: #EF9568;
+  --violet: #7E50A4;
 }
 
 @layer base {
@@ -35,29 +27,29 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
-    background: var(--cream);
+    background: var(--void);
   }
 
   body {
-    background-color: var(--cream);
-    color: var(--ink);
+    background-color: var(--void);
+    color: var(--white);
     font-family: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
     font-size: 1rem;
     line-height: 1.55;
   }
 
   ::selection {
-    background-color: var(--ink);
-    color: var(--sun);
+    background-color: var(--electric);
+    color: var(--white);
   }
 
   :focus-visible {
-    outline: 2px solid var(--ink);
+    outline: 2px solid var(--electric);
     outline-offset: 3px;
   }
 
   .on-dark :focus-visible {
-    outline-color: var(--bone);
+    outline-color: var(--white);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -78,8 +70,11 @@
 }
 
 @layer utilities {
-  /* Type system — editorial / poster */
+  /* Type system — editorial / poster.
+     Display family. TODO: load Breul Grotesk via next/font/local (/public/fonts/*.woff2)
+     and set --font-display; for now this falls back to the sans. */
   .type-poster {
+    font-family: var(--font-display), var(--font-inter), 'Inter', system-ui, sans-serif;
     font-size: clamp(3.75rem, 14vw, 13rem);
     line-height: 0.86;
     letter-spacing: -0.04em;
@@ -88,6 +83,7 @@
   }
 
   .type-display {
+    font-family: var(--font-display), var(--font-inter), 'Inter', system-ui, sans-serif;
     font-size: clamp(2.75rem, 8.5vw, 7rem);
     line-height: 0.92;
     letter-spacing: -0.03em;
@@ -96,6 +92,7 @@
   }
 
   .type-chapter {
+    font-family: var(--font-display), var(--font-inter), 'Inter', system-ui, sans-serif;
     font-size: clamp(1.875rem, 4.5vw, 4rem);
     line-height: 1.02;
     letter-spacing: -0.025em;
@@ -103,6 +100,7 @@
   }
 
   .type-headline {
+    font-family: var(--font-display), var(--font-inter), 'Inter', system-ui, sans-serif;
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     line-height: 1.08;
     letter-spacing: -0.02em;
@@ -122,7 +120,9 @@
     font-weight: 400;
   }
 
+  /* Small labels + technical text — Space Mono, club/flyer feel. */
   .type-label {
+    font-family: var(--font-mono), 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 0.6875rem;
     line-height: 1;
     letter-spacing: 0.16em;
@@ -131,6 +131,7 @@
   }
 
   .type-tag {
+    font-family: var(--font-mono), 'Space Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 0.625rem;
     line-height: 1;
     letter-spacing: 0.2em;
@@ -138,10 +139,12 @@
     text-transform: uppercase;
   }
 
+  /* Instrument Serif dropped in the OBRA rebrand — no italic serif anywhere.
+     Accent words now ride the display sans (non-italic); colour carries the emphasis. */
   .type-serif {
-    font-family: var(--font-serif), 'Instrument Serif', Georgia, serif;
+    font-family: var(--font-display), var(--font-inter), 'Inter', system-ui, sans-serif;
     font-weight: 400;
-    font-style: italic;
+    font-style: normal;
     letter-spacing: -0.015em;
   }
 
@@ -154,14 +157,14 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.4;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.45;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
   .tex-grain-dark::after {
-    mix-blend-mode: screen;
-    opacity: 0.15;
+    mix-blend-mode: soft-light;
+    opacity: 0.25;
   }
 
   .tex-halftone {
@@ -184,17 +187,18 @@
     background-image:
       repeating-linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.04) 0,
-        rgba(0, 0, 0, 0.04) 1px,
+        rgba(255, 255, 255, 0.045) 0,
+        rgba(255, 255, 255, 0.045) 1px,
         transparent 1px,
         transparent 38px
       );
   }
 
+  /* Dark gradient glow — low-alpha electric + magenta on near-black. */
   .tex-paper {
     background-image:
-      radial-gradient(ellipse at 20% 10%, rgba(231, 169, 59, 0.10), transparent 55%),
-      radial-gradient(ellipse at 90% 80%, rgba(184, 92, 58, 0.08), transparent 55%);
+      radial-gradient(ellipse at 20% 10%, rgba(62, 83, 216, 0.14), transparent 55%),
+      radial-gradient(ellipse at 90% 80%, rgba(212, 64, 120, 0.12), transparent 55%);
   }
 
   .edge-torn {
@@ -208,7 +212,7 @@
     transform: rotate(1.2deg);
   }
 
-  /* Sticky-tape look for poster-like cards */
+  /* Frosted-tape look for poster-like cards (restyled for dark; was gold). */
   .tape::before {
     content: '';
     position: absolute;
@@ -217,8 +221,8 @@
     transform: translateX(-50%) rotate(-3deg);
     width: 64px;
     height: 18px;
-    background: rgba(231, 169, 59, 0.55);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
     border-radius: 1px;
     z-index: 2;
   }

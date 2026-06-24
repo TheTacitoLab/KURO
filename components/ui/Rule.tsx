@@ -13,11 +13,11 @@ export function Rule({ weight = 'hair', theme = 'light', className }: RuleProps)
         'border-0',
         weight === 'hair'
           ? theme === 'dark'
-            ? 'h-px bg-cream/25'
-            : 'h-px bg-ink/15'
+            ? 'h-px bg-white/25'
+            : 'h-px bg-line'
           : theme === 'dark'
-          ? 'h-[3px] bg-cream'
-          : 'h-[3px] bg-ink',
+          ? 'h-[3px] bg-white'
+          : 'h-[3px] bg-white',
         className
       )}
     />

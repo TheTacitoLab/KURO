@@ -36,30 +36,30 @@ export default function ProcessPage() {
     <>
       {/* Header */}
       <section
-        className="bg-cream text-ink relative tex-grain pt-32 md:pt-40"
+        className="bg-void text-white relative tex-grain pt-32 md:pt-40"
         aria-labelledby="process-page-heading"
       >
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-20 -left-20 w-[480px] h-[480px] rounded-full bg-mint/60 blur-3xl"
+          className="pointer-events-none absolute -top-20 -left-20 w-[480px] h-[480px] rounded-full bg-electric/60 blur-3xl"
         />
         <Container className="relative">
           <div className="pb-16 md:pb-24 grid md:grid-cols-12 gap-10">
             <div className="md:col-span-8">
               <AnimatedReveal>
-                <p className="type-tag text-sea mb-6">✶ PROCESS</p>
+                <p className="type-tag text-electric mb-6">✶ PROCESS</p>
               </AnimatedReveal>
               <AnimatedReveal delay={0.08}>
                 <h1 id="process-page-heading" className="type-display">
                   Brief.{' '}
-                  <span className="type-serif text-sea normal-case font-normal italic">
+                  <span className="type-serif text-electric normal-case font-normal">
                     to
                   </span>{' '}
                   ship.
                 </h1>
               </AnimatedReveal>
               <AnimatedReveal delay={0.16}>
-                <p className="type-lede text-smoke mt-6 max-w-xl">
+                <p className="type-lede text-ash mt-6 max-w-xl">
                   Six stages. Always the same. Department KURO runs the whole chain.
                 </p>
               </AnimatedReveal>
@@ -69,7 +69,7 @@ export default function ProcessPage() {
       </section>
 
       {/* Timeline */}
-      <section className="bg-paper text-ink relative tex-grain" aria-label="Project stages">
+      <section className="bg-obsidian text-white relative tex-grain" aria-label="Project stages">
         <Container>
           <div className="py-20 md:py-28">
             <AnimatedReveal>
@@ -97,20 +97,20 @@ export default function ProcessPage() {
 
       {/* Spec + requirements */}
       <section
-        className="bg-cream text-ink relative tex-grain"
+        className="bg-void text-white relative tex-grain"
         aria-label="Timeline and requirements"
       >
         <Container>
           <div className="py-20 md:py-28 grid md:grid-cols-12 gap-10">
             <div className="md:col-span-6">
               <AnimatedReveal>
-                <p className="type-tag text-olive mb-6">✶ TIMING</p>
+                <p className="type-tag text-violet mb-6">✶ TIMING</p>
               </AnimatedReveal>
               <AnimatedReveal delay={0.08}>
                 <h2 className="type-chapter mb-10">Timeline spec.</h2>
               </AnimatedReveal>
               <AnimatedReveal delay={0.14}>
-                <div className="bg-bone border border-ink/10 rounded-2xl p-6 md:p-8">
+                <div className="bg-slate border border-line rounded-2xl p-6 md:p-8">
                   <SpecList items={timelineSpec} />
                 </div>
               </AnimatedReveal>
@@ -128,22 +128,22 @@ export default function ProcessPage() {
                   {toStart.map((item, i) => (
                     <li
                       key={item}
-                      className="flex items-start gap-4 bg-bone border border-ink/10 rounded-xl px-5 py-4"
+                      className="flex items-start gap-4 bg-slate border border-line rounded-xl px-5 py-4"
                     >
                       <span
-                        className="type-tag bg-ink text-cream px-2 py-1 rounded-full shrink-0 mt-0.5"
+                        className="type-tag bg-white text-void px-2 py-1 rounded-full shrink-0 mt-0.5"
                         aria-hidden="true"
                       >
                         {String(i + 1).padStart(2, '0')}
                       </span>
-                      <span className="type-body text-ink">{item}</span>
+                      <span className="type-body text-white">{item}</span>
                     </li>
                   ))}
                 </ul>
               </AnimatedReveal>
 
               <AnimatedReveal delay={0.2}>
-                <div className="bg-sun text-ink rounded-2xl p-6 md:p-8 tex-grain">
+                <div className="bg-flare text-void rounded-2xl p-6 md:p-8 tex-grain">
                   <p className="type-tag mb-3">READY?</p>
                   <p className="type-headline mb-6">Send a brief. Get a reply.</p>
                   <Button href="/brief" variant="primary" size="lg">

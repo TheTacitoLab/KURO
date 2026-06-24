@@ -16,12 +16,12 @@ export default function StudioPage() {
     <>
       {/* Header */}
       <section
-        className="bg-cream text-ink relative tex-grain pt-32 md:pt-40"
+        className="bg-void text-white relative tex-grain pt-32 md:pt-40"
         aria-labelledby="studio-heading"
       >
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-24 right-0 w-[460px] h-[460px] rounded-full bg-lilac/60 blur-3xl"
+          className="pointer-events-none absolute -top-24 right-0 w-[460px] h-[460px] rounded-full bg-violet/60 blur-3xl"
         />
         <Container className="relative">
           <div className="pb-16 md:pb-24 grid md:grid-cols-12 gap-10">
@@ -32,13 +32,13 @@ export default function StudioPage() {
               <AnimatedReveal delay={0.08}>
                 <h1 id="studio-heading" className="type-display">
                   A jersey studio.{' '}
-                  <span className="type-serif text-coral normal-case font-normal italic">
+                  <span className="type-serif text-coral normal-case font-normal">
                     For the event.
                   </span>
                 </h1>
               </AnimatedReveal>
               <AnimatedReveal delay={0.16}>
-                <p className="type-lede text-smoke mt-6 max-w-2xl">
+                <p className="type-lede text-ash mt-6 max-w-2xl">
                   KURO designs and manufactures limited edition football jerseys made to
                   remember.
                 </p>
@@ -49,11 +49,11 @@ export default function StudioPage() {
       </section>
 
       {/* Statement block: what KURO is / is not */}
-      <section className="bg-paper text-ink relative tex-grain">
+      <section className="bg-obsidian text-white relative tex-grain">
         <Container>
           <div className="py-20 md:py-28 grid md:grid-cols-2 gap-6">
             <AnimatedReveal>
-              <div className="bg-mint text-ink rounded-3xl p-8 md:p-10 h-full tex-grain relative overflow-hidden">
+              <div className="bg-electric text-white rounded-3xl p-8 md:p-10 h-full tex-grain relative overflow-hidden">
                 <p className="type-tag mb-6">KURO IS</p>
                 <ul className="space-y-3 type-lede">
                   <li>— A jersey studio</li>
@@ -66,9 +66,9 @@ export default function StudioPage() {
             </AnimatedReveal>
 
             <AnimatedReveal delay={0.08}>
-              <div className="bg-ink text-cream on-dark rounded-3xl p-8 md:p-10 h-full tex-grain relative overflow-hidden">
-                <p className="type-tag text-sun mb-6">KURO IS NOT</p>
-                <ul className="space-y-3 type-lede text-cream/85">
+              <div className="bg-obsidian text-white on-dark rounded-3xl p-8 md:p-10 h-full tex-grain relative overflow-hidden border border-line">
+                <p className="type-tag text-flare mb-6">KURO IS NOT</p>
+                <ul className="space-y-3 type-lede text-white/85">
                   <li>— A merch agency</li>
                   <li>— A printer of blanks</li>
                   <li>— A stealth consultancy</li>
@@ -94,12 +94,12 @@ export default function StudioPage() {
       />
 
       {/* Operating model + contact */}
-      <section className="bg-cream text-ink relative tex-grain">
+      <section className="bg-void text-white relative tex-grain">
         <Container>
           <div className="py-20 md:py-28 grid md:grid-cols-12 gap-10">
             <div className="md:col-span-7">
               <AnimatedReveal>
-                <p className="type-tag text-sea mb-6">✶ DEPARTMENT KURO</p>
+                <p className="type-tag text-electric mb-6">✶ DEPARTMENT KURO</p>
               </AnimatedReveal>
               <AnimatedReveal delay={0.08}>
                 <h2 className="type-chapter mb-6">
@@ -107,7 +107,7 @@ export default function StudioPage() {
                 </h2>
               </AnimatedReveal>
               <AnimatedReveal delay={0.16}>
-                <div className="space-y-5 type-body text-smoke max-w-xl">
+                <div className="space-y-5 type-body text-ash max-w-xl">
                   <p>
                     KURO runs lean by design. Two operators. One studio. Specialists added
                     when the project needs them.
@@ -116,7 +116,7 @@ export default function StudioPage() {
                     Department KURO sits beside the client&apos;s brand team, event team or
                     creative team — without adding more handoffs.
                   </p>
-                  <p className="text-ink">
+                  <p className="text-white">
                     The client gets the department without building one.
                   </p>
                 </div>
@@ -124,46 +124,46 @@ export default function StudioPage() {
             </div>
 
             <AnimatedReveal delay={0.18} className="md:col-span-5">
-              <div className="bg-bone border border-ink/10 rounded-3xl p-6 md:p-8">
-                <p className="type-tag text-smoke mb-6">CONTACT</p>
+              <div className="bg-slate border border-line rounded-3xl p-6 md:p-8">
+                <p className="type-tag text-ash mb-6">CONTACT</p>
 
                 <div className="space-y-5">
                   <div>
-                    <p className="type-tag text-dust mb-2">BASED</p>
-                    <p className="type-body text-ink">Hampshire, UK</p>
+                    <p className="type-tag text-mute mb-2">BASED</p>
+                    <p className="type-body text-white">Hampshire, UK</p>
                   </div>
                   <div>
-                    <p className="type-tag text-dust mb-2">REACH</p>
-                    <p className="type-body text-ink">Global</p>
+                    <p className="type-tag text-mute mb-2">REACH</p>
+                    <p className="type-body text-white">Global</p>
                   </div>
                 </div>
 
-                <hr className="my-6 border-ink/10" />
+                <hr className="my-6 border-line" />
 
                 <div className="space-y-3">
                   <a
                     href="mailto:hello@deptkuro.com"
-                    className="block type-body text-ink hover:text-ember transition-colors"
+                    className="block type-body text-white hover:text-coral transition-colors"
                   >
-                    <span className="type-tag text-smoke block mb-1">EMAIL</span>
+                    <span className="type-tag text-ash block mb-1">EMAIL</span>
                     hello@deptkuro.com
                   </a>
                   <a
                     href="https://instagram.com/deptkuro"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block type-body text-ink hover:text-ember transition-colors"
+                    className="block type-body text-white hover:text-coral transition-colors"
                   >
-                    <span className="type-tag text-smoke block mb-1">INSTAGRAM</span>
+                    <span className="type-tag text-ash block mb-1">INSTAGRAM</span>
                     @deptkuro
                   </a>
                   <a
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block type-body text-ink hover:text-ember transition-colors"
+                    className="block type-body text-white hover:text-coral transition-colors"
                   >
-                    <span className="type-tag text-smoke block mb-1">LINKEDIN</span>
+                    <span className="type-tag text-ash block mb-1">LINKEDIN</span>
                     KURO Studio
                   </a>
                 </div>

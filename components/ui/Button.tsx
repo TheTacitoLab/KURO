@@ -33,16 +33,17 @@ export function Button({
   }
 
   const variants = {
+    // Primary CTA — electric punches hardest on near-black.
     primary:
-      'bg-ink text-cream hover:bg-coal focus-visible:outline-ink',
+      'bg-electric text-white hover:brightness-110 focus-visible:outline-white',
     secondary:
-      'bg-transparent text-ink border border-ink hover:bg-ink hover:text-cream focus-visible:outline-ink',
+      'bg-transparent text-white border border-line hover:bg-white hover:text-void focus-visible:outline-white',
     ghost:
-      'bg-transparent text-ink hover:text-ember underline underline-offset-4 decoration-2 decoration-ember/40 hover:decoration-ember rounded-none px-0 py-1',
+      'bg-transparent text-white hover:text-coral underline underline-offset-4 decoration-2 decoration-coral/40 hover:decoration-coral rounded-none px-0 py-1',
     sun:
-      'bg-sun text-ink hover:bg-coral hover:text-cream focus-visible:outline-ink',
+      'bg-flare text-void hover:brightness-105 focus-visible:outline-white',
     coral:
-      'bg-coral text-cream hover:bg-ember focus-visible:outline-ink',
+      'bg-coral text-white hover:brightness-110 focus-visible:outline-white',
   }
 
   const classes = cx(

@@ -46,10 +46,11 @@ const madeShipIncludes = [
   'Reverse logistics and unsold stock handling',
 ]
 
+// Package accents after remap: 01 coral, 02 electric, 03 magenta.
 const howToChoose = [
   { q: 'Already have a store?', a: 'Start with MADE.', tone: 'coral' },
-  { q: 'Need the drop sold through a dedicated site?', a: 'Look at MADE + SELL.', tone: 'sea' },
-  { q: 'Need the full chain handled?', a: 'Look at MADE + SELL + SHIP.', tone: 'olive' },
+  { q: 'Need the drop sold through a dedicated site?', a: 'Look at MADE + SELL.', tone: 'electric' },
+  { q: 'Need the full chain handled?', a: 'Look at MADE + SELL + SHIP.', tone: 'magenta' },
 ]
 
 export default function PackagesPage() {
@@ -57,12 +58,12 @@ export default function PackagesPage() {
     <>
       {/* Header */}
       <section
-        className="bg-cream text-ink relative tex-grain pt-32 md:pt-40"
+        className="bg-void text-white relative tex-grain pt-32 md:pt-40"
         aria-labelledby="packages-page-heading"
       >
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-20 right-0 w-[480px] h-[480px] rounded-full bg-sun/60 blur-3xl"
+          className="pointer-events-none absolute -top-20 right-0 w-[480px] h-[480px] rounded-full bg-flare/60 blur-3xl"
         />
         <Container className="relative">
           <div className="pb-16 md:pb-24 grid md:grid-cols-12 gap-10">
@@ -73,22 +74,22 @@ export default function PackagesPage() {
               <AnimatedReveal delay={0.08}>
                 <h1 id="packages-page-heading" className="type-display">
                   Three ways to work{' '}
-                  <span className="type-serif text-ember normal-case font-normal italic">
+                  <span className="type-serif text-coral normal-case font-normal">
                     with KURO.
                   </span>
                 </h1>
               </AnimatedReveal>
               <AnimatedReveal delay={0.16}>
-                <p className="type-lede text-smoke mt-6 max-w-xl">
+                <p className="type-lede text-ash mt-6 max-w-xl">
                   Start with the jersey. Add as much of the chain as needed.
                 </p>
               </AnimatedReveal>
             </div>
 
             <AnimatedReveal delay={0.22} className="md:col-span-4">
-              <div className="bg-bone border border-ink/10 rounded-2xl p-6">
-                <p className="type-tag text-smoke mb-3">DEPARTMENT KURO</p>
-                <p className="type-body text-ink/80">
+              <div className="bg-slate border border-line rounded-2xl p-6">
+                <p className="type-tag text-ash mb-3">DEPARTMENT KURO</p>
+                <p className="type-body text-white/80">
                   Department KURO can sit beside the client&apos;s team as much or as
                   little as the project needs.
                 </p>
@@ -99,11 +100,11 @@ export default function PackagesPage() {
       </section>
 
       {/* Package cards */}
-      <section className="bg-paper text-ink relative tex-grain" aria-label="Package details">
+      <section className="bg-obsidian text-white relative tex-grain" aria-label="Package details">
         <Container>
           <div className="py-20 md:py-28">
             <AnimatedReveal>
-              <p className="type-tag text-sea mb-8">✶ DETAIL</p>
+              <p className="type-tag text-electric mb-8">✶ DETAIL</p>
             </AnimatedReveal>
             <div className="grid md:grid-cols-3 gap-6">
               <AnimatedReveal>
@@ -131,7 +132,7 @@ export default function PackagesPage() {
                   includes={madeSellIncludes}
                   ctaLabel="Join the waitlist"
                   ctaHref="/brief"
-                  tone="sea"
+                  tone="electric"
                 />
               </AnimatedReveal>
               <AnimatedReveal delay={0.16}>
@@ -145,7 +146,7 @@ export default function PackagesPage() {
                   includes={madeShipIncludes}
                   ctaLabel="Join the waitlist"
                   ctaHref="/brief"
-                  tone="olive"
+                  tone="magenta"
                 />
               </AnimatedReveal>
             </div>
@@ -160,13 +161,13 @@ export default function PackagesPage() {
       />
 
       {/* Comparison table */}
-      <section className="bg-cream text-ink relative tex-grain">
+      <section className="bg-void text-white relative tex-grain">
         <Container>
           <div className="py-20 md:py-28">
             <div className="grid md:grid-cols-12 gap-8 mb-10">
               <div className="md:col-span-8">
                 <AnimatedReveal>
-                  <p className="type-tag text-olive mb-6">✶ COMPARISON</p>
+                  <p className="type-tag text-violet mb-6">✶ COMPARISON</p>
                 </AnimatedReveal>
                 <AnimatedReveal delay={0.08}>
                   <h2 className="type-chapter">What sits inside each package.</h2>
@@ -182,7 +183,7 @@ export default function PackagesPage() {
 
       {/* How to choose */}
       <section
-        className="bg-paper text-ink relative tex-grain"
+        className="bg-obsidian text-white relative tex-grain"
         aria-labelledby="how-to-choose"
       >
         <Container>
@@ -197,7 +198,7 @@ export default function PackagesPage() {
                 </h2>
               </AnimatedReveal>
               <AnimatedReveal delay={0.18}>
-                <p className="type-body text-smoke mt-6 max-w-md">
+                <p className="type-body text-ash mt-6 max-w-md">
                   Not sure? Tell KURO about the event. KURO will point to the package.
                 </p>
                 <div className="mt-6">
@@ -214,10 +215,10 @@ export default function PackagesPage() {
                   <div
                     className={`relative rounded-2xl p-6 md:p-8 tex-grain ${
                       tone === 'coral'
-                        ? 'bg-coral text-cream'
-                        : tone === 'sea'
-                        ? 'bg-sea text-cream'
-                        : 'bg-olive text-cream'
+                        ? 'bg-coral text-white'
+                        : tone === 'electric'
+                        ? 'bg-electric text-white'
+                        : 'bg-magenta text-white'
                     }`}
                   >
                     <p className="type-tag opacity-80 mb-3">Q.0{i + 1}</p>

@@ -7,15 +7,16 @@ interface StatementBlockProps {
   size?: 'md' | 'lg'
 }
 
+// Tone keys kept stable for call sites; values remapped to the OBRA palette.
 const toneMap = {
-  ink: 'bg-ink text-cream',
-  cream: 'bg-cream text-ink',
-  coral: 'bg-coral text-cream',
-  sun: 'bg-sun text-ink',
-  sea: 'bg-sea text-cream',
-  olive: 'bg-olive text-cream',
-  terracotta: 'bg-terracotta text-cream',
-  lilac: 'bg-lilac text-ink',
+  ink: 'bg-obsidian text-white',
+  cream: 'bg-void text-white',
+  coral: 'bg-coral text-white',
+  sun: 'bg-flare text-void',
+  sea: 'bg-electric text-white',
+  olive: 'bg-violet text-white',
+  terracotta: 'bg-coral text-white',
+  lilac: 'bg-violet text-white',
 }
 
 export function StatementBlock({

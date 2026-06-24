@@ -12,15 +12,16 @@ interface ImagePlaceholderProps {
   tilt?: 'left' | 'right' | 'none'
 }
 
+// Tone keys kept stable for call sites; values remapped to the OBRA palette.
 const toneMap: Record<Tone, { bg: string; ink: string; accent: string }> = {
-  coral: { bg: 'bg-coral', ink: 'text-cream', accent: 'bg-sun' },
-  sun: { bg: 'bg-sun', ink: 'text-ink', accent: 'bg-coral' },
-  sea: { bg: 'bg-sea', ink: 'text-cream', accent: 'bg-sand' },
-  mint: { bg: 'bg-mint', ink: 'text-ink', accent: 'bg-olive' },
-  olive: { bg: 'bg-olive', ink: 'text-cream', accent: 'bg-sun' },
-  lilac: { bg: 'bg-lilac', ink: 'text-ink', accent: 'bg-coral' },
-  sand: { bg: 'bg-sand', ink: 'text-ink', accent: 'bg-terracotta' },
-  terracotta: { bg: 'bg-terracotta', ink: 'text-cream', accent: 'bg-sand' },
+  coral: { bg: 'bg-coral', ink: 'text-white', accent: 'bg-flare' },
+  sun: { bg: 'bg-flare', ink: 'text-void', accent: 'bg-coral' },
+  sea: { bg: 'bg-electric', ink: 'text-white', accent: 'bg-ash' },
+  mint: { bg: 'bg-electric', ink: 'text-white', accent: 'bg-violet' },
+  olive: { bg: 'bg-violet', ink: 'text-white', accent: 'bg-flare' },
+  lilac: { bg: 'bg-violet', ink: 'text-white', accent: 'bg-coral' },
+  sand: { bg: 'bg-ash', ink: 'text-void', accent: 'bg-coral' },
+  terracotta: { bg: 'bg-coral', ink: 'text-white', accent: 'bg-ash' },
 }
 
 export function ImagePlaceholder({

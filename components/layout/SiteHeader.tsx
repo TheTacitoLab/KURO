@@ -42,13 +42,13 @@ export function SiteHeader() {
         className={cx(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           scrolled || menuOpen
-            ? 'bg-cream/90 backdrop-blur-md border-b border-ink/10'
+            ? 'bg-void/90 backdrop-blur-md border-b border-line'
             : 'bg-transparent border-b border-transparent'
         )}
       >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 type-label bg-ink text-cream px-4 py-2 rounded-full z-10"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 type-label bg-white text-void px-4 py-2 rounded-full z-10"
         >
           Skip to content
         </a>
@@ -60,19 +60,19 @@ export function SiteHeader() {
           >
             <Link
               href="/"
-              className="flex items-center gap-2 text-ink hover:opacity-80 transition-opacity focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink"
+              className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
               aria-label="KURO — home"
             >
               <span
                 aria-hidden="true"
-                className="w-7 h-7 rounded-full bg-coral grid place-items-center text-cream text-[11px] font-extrabold"
+                className="w-7 h-7 rounded-full bg-coral grid place-items-center text-white text-[11px] font-extrabold"
               >
                 K
               </span>
               <span className="font-extrabold tracking-tight text-lg leading-none">
                 KURO
               </span>
-              <span className="hidden sm:inline type-tag text-smoke ml-1">
+              <span className="hidden sm:inline type-tag text-ash ml-1">
                 @deptkuro
               </span>
             </Link>
@@ -86,10 +86,10 @@ export function SiteHeader() {
                     key={href}
                     href={href}
                     className={cx(
-                      'type-label px-4 py-2.5 rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink',
+                      'type-label px-4 py-2.5 rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white',
                       active
-                        ? 'bg-ink text-cream'
-                        : 'text-ink/70 hover:text-ink hover:bg-ink/5'
+                        ? 'bg-white text-void'
+                        : 'text-white/70 hover:text-white hover:bg-white/5'
                     )}
                   >
                     {label}
@@ -98,7 +98,7 @@ export function SiteHeader() {
               })}
               <Link
                 href="/brief"
-                className="ml-3 inline-flex items-center gap-2 type-label bg-coral text-cream pl-5 pr-4 py-3 rounded-full hover:bg-ember transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink"
+                className="ml-3 inline-flex items-center gap-2 type-label bg-coral text-white pl-5 pr-4 py-3 rounded-full hover:brightness-110 transition-all focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
               >
                 Start a brief
                 <span aria-hidden="true">→</span>
@@ -108,7 +108,7 @@ export function SiteHeader() {
             {/* Mobile menu button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden type-label text-ink px-4 py-2 rounded-full bg-ink/5 hover:bg-ink/10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink"
+              className="md:hidden type-label text-white px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
@@ -128,7 +128,7 @@ export function SiteHeader() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="fixed inset-0 z-40 bg-coral text-cream flex flex-col tex-grain"
+            className="fixed inset-0 z-40 bg-coral text-white flex flex-col tex-grain"
             aria-modal="true"
             role="dialog"
             aria-label="Navigation menu"
@@ -161,7 +161,7 @@ export function SiteHeader() {
                     >
                       <Link
                         href={href}
-                        className="type-display block py-2 hover:text-sun transition-colors"
+                        className="type-display block py-2 hover:text-flare transition-colors"
                         onClick={() => setMenuOpen(false)}
                       >
                         {label}
@@ -172,14 +172,14 @@ export function SiteHeader() {
               </motion.nav>
             </div>
 
-            <div className="px-6 py-8 border-t border-cream/20 flex items-center justify-between flex-wrap gap-4">
+            <div className="px-6 py-8 border-t border-white/20 flex items-center justify-between flex-wrap gap-4">
               <a
                 href="mailto:hello@deptkuro.com"
-                className="type-label hover:text-sun transition-colors"
+                className="type-label hover:text-flare transition-colors"
               >
                 hello@deptkuro.com
               </a>
-              <span className="type-label text-cream/70">@deptkuro</span>
+              <span className="type-label text-white/70">@deptkuro</span>
             </div>
           </motion.div>
         )}

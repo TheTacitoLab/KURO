@@ -29,7 +29,7 @@ const items = [
 export default function PrivacyPage() {
   return (
     <section
-      className="bg-cream text-ink relative tex-grain pt-32 md:pt-40 pb-24 md:pb-32 min-h-screen"
+      className="bg-void text-white relative tex-grain pt-32 md:pt-40 pb-24 md:pb-32 min-h-screen"
       aria-labelledby="privacy-heading"
     >
       <Container>
@@ -42,20 +42,20 @@ export default function PrivacyPage() {
           {items.map((item) => (
             <div
               key={item.label}
-              className="bg-bone border border-ink/10 rounded-2xl p-6 md:p-8"
+              className="bg-slate border border-line rounded-2xl p-6 md:p-8"
             >
-              <p className="type-label text-smoke mb-3">{item.label}</p>
-              <p className="type-body text-ink/85">{item.body}</p>
+              <p className="type-label text-ash mb-3">{item.label}</p>
+              <p className="type-body text-white/85">{item.body}</p>
             </div>
           ))}
 
-          <div className="bg-sun text-ink rounded-2xl p-6 md:p-8 tex-grain">
+          <div className="bg-flare text-void rounded-2xl p-6 md:p-8 tex-grain">
             <p className="type-label mb-3">CONTACT</p>
             <p className="type-body">
               Questions about this policy can be sent to{' '}
               <a
                 href="mailto:hello@deptkuro.com"
-                className="underline underline-offset-4 font-semibold hover:text-ember transition-colors"
+                className="underline underline-offset-4 font-semibold hover:text-coral transition-colors"
               >
                 hello@deptkuro.com
               </a>

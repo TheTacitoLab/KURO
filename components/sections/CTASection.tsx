@@ -10,12 +10,14 @@ interface CTASectionProps {
   tone?: 'sun' | 'coral' | 'sea' | 'ink' | 'cream'
 }
 
+// Tone keys kept stable for call sites. Former gold ("sun") CTAs become electric —
+// it punches harder on near-black than the peach highlight.
 const toneMap = {
-  sun: 'bg-sun text-ink',
-  coral: 'bg-coral text-cream',
-  sea: 'bg-sea text-cream',
-  ink: 'bg-ink text-cream on-dark',
-  cream: 'bg-cream text-ink border-t border-ink/10',
+  sun: 'bg-electric text-white on-dark',
+  coral: 'bg-coral text-white on-dark',
+  sea: 'bg-electric text-white on-dark',
+  ink: 'bg-obsidian text-white on-dark',
+  cream: 'bg-void text-white on-dark border-t border-line',
 }
 
 export function CTASection({
@@ -25,7 +27,8 @@ export function CTASection({
   email = true,
   tone = 'sun',
 }: CTASectionProps) {
-  const dark = tone === 'coral' || tone === 'sea' || tone === 'ink'
+  // On the electric-filled CTAs a coral button contrasts; elsewhere the electric primary button does.
+  const buttonVariant = tone === 'sun' || tone === 'sea' ? 'coral' : 'primary'
   return (
     <section
       className={`${toneMap[tone]} relative overflow-hidden tex-grain`}
@@ -53,7 +56,7 @@ export function CTASection({
             <div className="flex flex-col gap-5 md:items-end">
               <Button
                 href={primaryCta.href}
-                variant={tone === 'sun' ? 'primary' : tone === 'ink' ? 'sun' : 'primary'}
+                variant={buttonVariant}
                 size="lg"
               >
                 {primaryCta.label}
@@ -62,7 +65,7 @@ export function CTASection({
               {email && (
                 <a
                   href="mailto:hello@deptkuro.com"
-                  className={`type-label underline underline-offset-4 hover:opacity-100 transition-opacity ${dark ? 'opacity-80' : 'opacity-70'}`}
+                  className="type-label underline underline-offset-4 hover:opacity-100 transition-opacity opacity-80"
                 >
                   hello@deptkuro.com
                 </a>

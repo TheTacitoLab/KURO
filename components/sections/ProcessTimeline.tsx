@@ -5,9 +5,10 @@ interface ProcessStep {
   title: string
   timeframe: string
   description: string
-  tone: 'sun' | 'coral' | 'sea' | 'mint' | 'olive' | 'lilac'
+  tone: 'coral' | 'electric' | 'magenta' | 'violet' | 'flare'
 }
 
+// Stages cycle coral / electric / magenta / violet / flare across the six.
 const steps: ProcessStep[] = [
   {
     number: '01',
@@ -15,7 +16,7 @@ const steps: ProcessStep[] = [
     timeframe: 'First contact to signed brief.',
     description:
       'A short call. Volume, timeline, budget, brand, references. KURO writes a one-page brief. Client signs.',
-    tone: 'sun',
+    tone: 'coral',
   },
   {
     number: '02',
@@ -23,7 +24,7 @@ const steps: ProcessStep[] = [
     timeframe: 'Concept to approved sample.',
     description:
       'Creative direction. 3D mockups. Iteration with the client. Technical artwork. One physical sample. Approved before tooling.',
-    tone: 'coral',
+    tone: 'electric',
   },
   {
     number: '03',
@@ -31,7 +32,7 @@ const steps: ProcessStep[] = [
     timeframe: 'Approved sample to finished run.',
     description:
       'Cut-and-sew or sublimation, depending on the design. Production scheduled and monitored. Every jersey checked before dispatch.',
-    tone: 'sea',
+    tone: 'magenta',
   },
   {
     number: '04',
@@ -39,7 +40,7 @@ const steps: ProcessStep[] = [
     timeframe: 'Storefront live, where applicable.',
     description:
       "For MADE + SELL and MADE + SELL + SHIP. Shopify storefront built in the event's brand.",
-    tone: 'lilac',
+    tone: 'violet',
   },
   {
     number: '05',
@@ -47,7 +48,7 @@ const steps: ProcessStep[] = [
     timeframe: 'From factory to client or customer.',
     description:
       'MADE delivers to the client. MADE + SELL delivers the product and storefront. MADE + SELL + SHIP ships globally.',
-    tone: 'mint',
+    tone: 'flare',
   },
   {
     number: '06',
@@ -55,17 +56,16 @@ const steps: ProcessStep[] = [
     timeframe: 'Project documented. Relationship carried forward.',
     description:
       'Every completed project closes with a written debrief. What sold. What did not. What the next drop could look like.',
-    tone: 'olive',
+    tone: 'coral',
   },
 ]
 
 const toneMap = {
-  sun: 'bg-sun text-ink',
-  coral: 'bg-coral text-cream',
-  sea: 'bg-sea text-cream',
-  mint: 'bg-mint text-ink',
-  olive: 'bg-olive text-cream',
-  lilac: 'bg-lilac text-ink',
+  coral: 'bg-coral text-white',
+  electric: 'bg-electric text-white',
+  magenta: 'bg-magenta text-white',
+  violet: 'bg-violet text-white',
+  flare: 'bg-flare text-void',
 }
 
 export function ProcessTimeline() {
@@ -75,7 +75,7 @@ export function ProcessTimeline() {
         <li key={step.number}>
           <div
             className={cx(
-              'relative rounded-2xl border border-ink/10 overflow-hidden tex-grain bg-bone',
+              'relative rounded-2xl border border-line overflow-hidden tex-grain bg-slate',
               'grid md:grid-cols-[160px_1fr_auto] gap-6 md:gap-10 p-6 md:p-8',
               i % 2 === 1 && 'md:translate-x-6'
             )}
@@ -89,17 +89,17 @@ export function ProcessTimeline() {
               >
                 {step.number}
               </span>
-              <span className="type-label text-smoke md:mt-2">STAGE</span>
+              <span className="type-label text-ash md:mt-2">STAGE</span>
             </div>
 
             <div className="md:pt-2">
-              <h3 className="type-headline text-ink mb-2">{step.title}</h3>
-              <p className="type-lede text-ink/80 mb-3 max-w-xl">{step.timeframe}</p>
-              <p className="type-body text-smoke max-w-2xl">{step.description}</p>
+              <h3 className="type-headline text-white mb-2">{step.title}</h3>
+              <p className="type-lede text-white/80 mb-3 max-w-xl">{step.timeframe}</p>
+              <p className="type-body text-ash max-w-2xl">{step.description}</p>
             </div>
 
             <div className="hidden md:flex items-center self-stretch">
-              <span className="type-tag text-smoke rotate-90 origin-center whitespace-nowrap">
+              <span className="type-tag text-ash rotate-90 origin-center whitespace-nowrap">
                 KURO · STAGE {step.number}
               </span>
             </div>

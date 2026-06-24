@@ -17,7 +17,7 @@ export function MetadataLine({
     <div
       className={cx(
         'type-label flex flex-wrap items-center gap-x-3 gap-y-1',
-        theme === 'dark' ? 'text-cream/70' : 'text-smoke',
+        theme === 'dark' ? 'text-white/70' : 'text-ash',
         className
       )}
     >

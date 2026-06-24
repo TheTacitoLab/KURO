@@ -8,12 +8,13 @@ interface SectionLabelProps {
   accent?: 'sun' | 'coral' | 'sea' | 'olive' | 'lilac' | 'none'
 }
 
+// Accent keys kept stable for call sites; values remapped to the OBRA palette.
 const accentClass: Record<string, string> = {
-  sun: 'bg-sun text-ink',
-  coral: 'bg-coral text-cream',
-  sea: 'bg-sea text-cream',
-  olive: 'bg-olive text-cream',
-  lilac: 'bg-lilac text-ink',
+  sun: 'bg-flare text-void',
+  coral: 'bg-coral text-white',
+  sea: 'bg-electric text-white',
+  olive: 'bg-violet text-white',
+  lilac: 'bg-violet text-white',
   none: '',
 }
 
@@ -24,7 +25,7 @@ export function SectionLabel({
   theme = 'light',
   accent = 'none',
 }: SectionLabelProps) {
-  const baseColor = theme === 'dark' ? 'text-cream/70' : 'text-smoke'
+  const baseColor = theme === 'dark' ? 'text-white/70' : 'text-ash'
   return (
     <div className={cx('flex items-center gap-3 mb-6', className)}>
       {accent !== 'none' && (
