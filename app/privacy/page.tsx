@@ -4,21 +4,21 @@ import { Container } from '@/components/ui/Container'
 
 export const metadata: Metadata = buildMetadata({
   title: 'Privacy',
-  description: 'How KURO handles your information.',
+  description: 'How OBRA handles your information.',
 })
 
 const items = [
   {
     label: 'Information collected',
-    body: 'KURO collects the information you provide through the brief form — name, role, email, event details, volume and message — solely to respond to your enquiry.',
+    body: 'OBRA collects the information you provide through the brief form — name, role, email, event details, volume and message — solely to respond to your enquiry.',
   },
   {
     label: 'How it is used',
-    body: 'KURO uses your email to reply to your brief. Your information is not sold, shared with third parties, or used for marketing unless you have explicitly asked to be kept informed.',
+    body: 'OBRA uses your email to reply to your brief. Your information is not sold, shared with third parties, or used for marketing unless you have explicitly asked to be kept informed.',
   },
   {
     label: 'Analytics',
-    body: 'KURO may use Plausible Analytics — a privacy-focused, cookie-free analytics tool — if enabled. No personal data is collected or tracked.',
+    body: 'OBRA may use Plausible Analytics — a privacy-focused, cookie-free analytics tool — if enabled. No personal data is collected or tracked.',
   },
   {
     label: 'Cookies',
@@ -54,10 +54,10 @@ export default function PrivacyPage() {
             <p className="type-body">
               Questions about this policy can be sent to{' '}
               <a
-                href="mailto:hello@deptkuro.com"
+                href="mailto:hello@obra.studio"
                 className="underline underline-offset-4 font-semibold hover:text-ember transition-colors"
               >
-                hello@deptkuro.com
+                hello@obra.studio
               </a>
               .
             </p>

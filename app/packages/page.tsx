@@ -11,7 +11,7 @@ import { MarqueeStrip } from '@/components/ui/MarqueeStrip'
 export const metadata: Metadata = buildMetadata({
   title: 'Packages',
   description:
-    'Three ways to work with KURO. Start with the jersey. Add as much of the chain as needed.',
+    'Three ways to work with OBRA. Start with the jersey. Add as much of the chain as needed.',
 })
 
 const madeIncludes = [
@@ -74,7 +74,7 @@ export default function PackagesPage() {
                 <h1 id="packages-page-heading" className="type-display">
                   Three ways to work{' '}
                   <span className="type-serif text-ember normal-case font-normal italic">
-                    with KURO.
+                    with OBRA.
                   </span>
                 </h1>
               </AnimatedReveal>
@@ -87,9 +87,9 @@ export default function PackagesPage() {
 
             <AnimatedReveal delay={0.22} className="md:col-span-4">
               <div className="bg-bone border border-ink/10 rounded-2xl p-6">
-                <p className="type-tag text-smoke mb-3">DEPARTMENT KURO</p>
+                <p className="type-tag text-smoke mb-3">DEPARTMENT OBRA</p>
                 <p className="type-body text-ink/80">
-                  Department KURO can sit beside the client&apos;s team as much or as
+                  Department OBRA can sit beside the client&apos;s team as much or as
                   little as the project needs.
                 </p>
               </div>
@@ -111,7 +111,7 @@ export default function PackagesPage() {
                   number="01"
                   name="MADE"
                   tagline="Designed. Made. Delivered."
-                  description="Design and manufacture. KURO delivers finished jerseys. Client takes it from there."
+                  description="Design and manufacture. OBRA delivers finished jerseys. Client takes it from there."
                   status="available"
                   statusLabel="AVAILABLE NOW"
                   includes={madeIncludes}
@@ -198,7 +198,7 @@ export default function PackagesPage() {
               </AnimatedReveal>
               <AnimatedReveal delay={0.18}>
                 <p className="type-body text-smoke mt-6 max-w-md">
-                  Not sure? Tell KURO about the event. KURO will point to the package.
+                  Not sure? Tell OBRA about the drop. OBRA will point to the package.
                 </p>
                 <div className="mt-6">
                   <Button href="/brief" variant="primary" size="lg">

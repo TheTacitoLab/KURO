@@ -24,7 +24,7 @@ const toneMap: Record<Tone, { bg: string; ink: string; accent: string }> = {
 }
 
 export function ImagePlaceholder({
-  label = 'KURO JERSEY',
+  label = 'OBRA JERSEY',
   sublabel = 'EDITION / 001',
   aspectRatio = 'aspect-[4/5]',
   className,
@@ -79,7 +79,7 @@ export function ImagePlaceholder({
       {/* Corner sticker */}
       <div className="absolute top-4 left-4 z-10 flex items-center gap-2" aria-hidden="true">
         <span className={cx('w-2 h-2 rounded-full', t.accent)} />
-        <span className="type-tag">KURO · LTD</span>
+        <span className="type-tag">OBRA · LTD</span>
       </div>
 
       {/* Edition mark */}

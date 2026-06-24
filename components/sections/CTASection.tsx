@@ -19,7 +19,7 @@ const toneMap = {
 }
 
 export function CTASection({
-  headline = 'Tell KURO about the event.',
+  headline = 'Tell OBRA about your drop.',
   subline = 'One short form. Reply within two working days.',
   primaryCta = { label: 'Start a brief', href: '/brief' },
   email = true,
@@ -61,10 +61,10 @@ export function CTASection({
               </Button>
               {email && (
                 <a
-                  href="mailto:hello@deptkuro.com"
+                  href="mailto:hello@obra.studio"
                   className={`type-label underline underline-offset-4 hover:opacity-100 transition-opacity ${dark ? 'opacity-80' : 'opacity-70'}`}
                 >
-                  hello@deptkuro.com
+                  hello@obra.studio
                 </a>
               )}
             </div>

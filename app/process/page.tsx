@@ -11,7 +11,7 @@ import { MarqueeStrip } from '@/components/ui/MarqueeStrip'
 export const metadata: Metadata = buildMetadata({
   title: 'Process',
   description:
-    'Six stages. Brief to ship. How KURO runs a project from discovery to close.',
+    'Six stages. Brief to ship. How OBRA runs a project from discovery to close.',
 })
 
 const timelineSpec = [
@@ -60,7 +60,7 @@ export default function ProcessPage() {
               </AnimatedReveal>
               <AnimatedReveal delay={0.16}>
                 <p className="type-lede text-smoke mt-6 max-w-xl">
-                  Six stages. Always the same. Department KURO runs the whole chain.
+                  Six stages. Always the same. Department OBRA runs the whole chain.
                 </p>
               </AnimatedReveal>
             </div>
@@ -121,7 +121,7 @@ export default function ProcessPage() {
                 <p className="type-tag text-coral mb-6">✶ REQUIREMENTS</p>
               </AnimatedReveal>
               <AnimatedReveal delay={0.08}>
-                <h2 className="type-chapter mb-10">What KURO needs to start.</h2>
+                <h2 className="type-chapter mb-10">What OBRA needs to start.</h2>
               </AnimatedReveal>
               <AnimatedReveal delay={0.14}>
                 <ul className="space-y-3 mb-10">

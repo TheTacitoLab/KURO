@@ -7,7 +7,7 @@ import { AnimatedReveal } from '@/components/ui/AnimatedReveal'
 export const metadata: Metadata = buildMetadata({
   title: 'Start a brief',
   description:
-    'Tell KURO about the event. One short form. Reply within two working days.',
+    'Tell OBRA about your drop. One short form. Reply within two working days.',
 })
 
 export default function BriefPage() {
@@ -34,11 +34,11 @@ export default function BriefPage() {
             </AnimatedReveal>
             <AnimatedReveal delay={0.08}>
               <h1 id="brief-heading" className="type-display">
-                Tell KURO{' '}
+                Tell OBRA{' '}
                 <span className="type-serif text-ember normal-case font-normal italic">
                   about
                 </span>{' '}
-                the event.
+                your drop.
               </h1>
             </AnimatedReveal>
             <AnimatedReveal delay={0.16}>
@@ -49,7 +49,7 @@ export default function BriefPage() {
 
             <AnimatedReveal delay={0.22}>
               <div className="mt-10 bg-bone border border-ink/10 rounded-2xl p-6">
-                <p className="type-tag text-smoke mb-3">DEPARTMENT KURO</p>
+                <p className="type-tag text-smoke mb-3">DEPARTMENT OBRA</p>
                 <p className="type-body text-ink/80">
                   A dedicated jersey department for the event. Starts here.
                 </p>
@@ -59,18 +59,18 @@ export default function BriefPage() {
             <AnimatedReveal delay={0.28}>
               <div className="mt-6 space-y-2">
                 <a
-                  href="mailto:hello@deptkuro.com"
+                  href="mailto:hello@obra.studio"
                   className="type-body text-ink hover:text-ember transition-colors block"
                 >
-                  hello@deptkuro.com
+                  hello@obra.studio
                 </a>
                 <a
-                  href="https://instagram.com/deptkuro"
+                  href="https://instagram.com/obrajersey"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="type-body text-smoke hover:text-ink transition-colors block"
                 >
-                  @deptkuro
+                  @obrajersey
                 </a>
               </div>
             </AnimatedReveal>

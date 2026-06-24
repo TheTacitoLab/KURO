@@ -33,7 +33,7 @@ export default function NotFound() {
         </h1>
         <div className="flex flex-wrap gap-4">
           <Button href="/" variant="sun" size="lg">
-            Return to KURO →
+            Return to OBRA →
           </Button>
           <Link
             href="/brief"

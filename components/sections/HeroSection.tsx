@@ -52,11 +52,11 @@ export function HeroSection() {
               EDITION · 2026
             </span>
             <span className="type-tag text-smoke">
-              DEPARTMENT KURO · HAMPSHIRE ↔ GLOBAL
+              DEPARTMENT OBRA · HAMPSHIRE ↔ GLOBAL
             </span>
           </div>
           <span className="type-tag text-smoke hidden md:inline">
-            ✶ FESTIVALS · TOURS · DROPS · LIVE EVENTS
+            ✶ FESTIVALS · ARTISTS · CREATORS · LIVE EVENTS
           </span>
         </motion.div>
 
@@ -66,42 +66,45 @@ export function HeroSection() {
           <div className="md:col-span-12">
             <h1
               className="type-poster text-ink"
-              aria-label="Limited edition football jerseys made to remember."
+              aria-label="Limited edition football jerseys, from concept to creation."
             >
               <motion.span {...line(0.15)} className="block">
-                LIMITED
+                LIMITED EDITION
               </motion.span>
 
               <motion.span {...line(0.25)} className="block">
-                <span className="text-coral">EDITION</span>{' '}
+                <span className="text-coral">FOOTBALL</span>{' '}
                 <span className="type-serif text-ember normal-case font-normal italic tracking-tight">
-                  football
+                  jerseys,
                 </span>
               </motion.span>
 
               <motion.span {...line(0.35)} className="block">
-                JERSEYS
+                FROM CONCEPT
               </motion.span>
 
               <motion.span {...line(0.45)} className="block">
-                <span className="text-smoke">MADE</span>{' '}
-                <span className="text-sea">TO</span>{' '}
-                <span className="text-ember">REMEMBER.</span>
+                TO{' '}
+                <span className="text-ember">CREATION.</span>
               </motion.span>
             </h1>
           </div>
 
-          {/* Lower row: jersey card + copy + cta */}
+          {/* Lower row: copy + cta */}
           <motion.div
             {...fade(0.6)}
             className="md:col-span-4 md:col-start-1 mt-6"
           >
             <p className="type-lede text-ink max-w-md">
-              KURO designs and manufactures limited edition football jerseys for festivals,
-              tours, brand activations and live events.
+              OBRA creates limited edition football jerseys for festivals, artists,
+              creators and culture-led brands.
             </p>
-            <p className="type-body text-smoke max-w-md mt-4">
-              The event ends. The jersey stays.
+            <p className="type-body text-smoke max-w-md mt-3">
+              We take your drop from concept to creation, covering design, mockups,
+              tech packs, sampling and production.
+            </p>
+            <p className="type-body text-ink font-medium max-w-md mt-3">
+              One process. Start to finish.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 mt-8">
@@ -113,7 +116,7 @@ export function HeroSection() {
                 href="/process"
                 className="type-label text-ink hover:text-ember transition-colors underline underline-offset-4 decoration-2 decoration-ember/40 hover:decoration-ember"
               >
-                See how KURO works
+                See how OBRA works
               </Link>
             </div>
           </motion.div>
@@ -127,7 +130,7 @@ export function HeroSection() {
               <div
                 className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-coral text-cream tex-grain shadow-[0_30px_60px_-20px_rgba(169,71,58,0.45)]"
                 role="img"
-                aria-label="KURO limited edition jersey 001"
+                aria-label="OBRA limited edition jersey 001"
               >
                 {/* Stripes */}
                 <div
@@ -140,7 +143,7 @@ export function HeroSection() {
                 />
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
                   <span className="type-tag bg-cream/15 px-2 py-1 rounded-full backdrop-blur-sm">
-                    KURO · LTD
+                    OBRA · LTD
                   </span>
                   <span className="type-tag">EDITION / 001</span>
                 </div>
@@ -174,16 +177,6 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
-
-          {/* Quote/serif moment */}
-          <motion.div
-            {...fade(0.75)}
-            className="md:col-span-4 md:col-start-1 md:row-start-2 self-end mt-10 md:mt-0"
-          >
-            <p className="type-serif text-2xl md:text-3xl text-ink/80 leading-snug">
-              &ldquo;Not every souvenir gets worn.&rdquo;
-            </p>
           </motion.div>
         </div>
       </Container>

@@ -61,19 +61,19 @@ export function SiteHeader() {
             <Link
               href="/"
               className="flex items-center gap-2 text-ink hover:opacity-80 transition-opacity focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-ink"
-              aria-label="KURO — home"
+              aria-label="OBRA — home"
             >
               <span
                 aria-hidden="true"
                 className="w-7 h-7 rounded-full bg-coral grid place-items-center text-cream text-[11px] font-extrabold"
               >
-                K
+                O
               </span>
               <span className="font-extrabold tracking-tight text-lg leading-none">
-                KURO
+                OBRA
               </span>
               <span className="hidden sm:inline type-tag text-smoke ml-1">
-                @deptkuro
+                @obrajersey
               </span>
             </Link>
 
@@ -174,12 +174,12 @@ export function SiteHeader() {
 
             <div className="px-6 py-8 border-t border-cream/20 flex items-center justify-between flex-wrap gap-4">
               <a
-                href="mailto:hello@deptkuro.com"
+                href="mailto:hello@obra.studio"
                 className="type-label hover:text-sun transition-colors"
               >
-                hello@deptkuro.com
+                hello@obra.studio
               </a>
-              <span className="type-label text-cream/70">@deptkuro</span>
+              <span className="type-label text-cream/70">@obrajersey</span>
             </div>
           </motion.div>
         )}

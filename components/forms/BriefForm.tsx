@@ -91,15 +91,15 @@ export function BriefForm() {
         <p className="type-tag mb-4">RECEIVED ✶</p>
         <p className="type-display mb-4">Thanks.</p>
         <p className="type-lede mb-4 max-w-md">
-          KURO will reply within two working days.
+          OBRA will reply within two working days.
         </p>
         <p className="type-body opacity-80 max-w-md">
-          If the event is time-sensitive, email{' '}
+          If the drop is time-sensitive, email{' '}
           <a
-            href="mailto:hello@deptkuro.com"
+            href="mailto:hello@obra.studio"
             className="underline underline-offset-4 font-semibold hover:text-ember transition-colors"
           >
-            hello@deptkuro.com
+            hello@obra.studio
           </a>{' '}
           directly.
         </p>
@@ -258,7 +258,7 @@ export function BriefForm() {
         {/* Message */}
         <div className="md:col-span-2">
           <label htmlFor="brief-message" className={labelBase}>
-            Anything else KURO should know
+            Anything else OBRA should know
           </label>
           <textarea
             id="brief-message"
@@ -281,10 +281,10 @@ export function BriefForm() {
           <p className="type-body">
             Something went wrong. Try again, or email{' '}
             <a
-              href="mailto:hello@deptkuro.com"
+              href="mailto:hello@obra.studio"
               className="underline underline-offset-4 font-semibold"
             >
-              hello@deptkuro.com
+              hello@obra.studio
             </a>
             .
           </p>

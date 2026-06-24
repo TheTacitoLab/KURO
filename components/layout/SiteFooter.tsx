@@ -9,12 +9,12 @@ export function SiteFooter() {
         tone="sun"
         size="lg"
         items={[
-          'KURO',
+          'OBRA',
           'LIMITED EDITION',
-          'MADE TO REMEMBER',
+          'FOOTBALL JERSEYS',
           'FESTIVALS',
-          'TOURS',
-          'BRAND ACTIVATIONS',
+          'ARTISTS',
+          'CREATORS',
           'LIVE EVENTS',
         ]}
       />
@@ -28,15 +28,15 @@ export function SiteFooter() {
                 aria-hidden="true"
                 className="w-9 h-9 rounded-full bg-coral grid place-items-center text-cream text-sm font-extrabold"
               >
-                K
+                O
               </span>
-              <span className="font-extrabold text-2xl tracking-tight">KURO</span>
+              <span className="font-extrabold text-2xl tracking-tight">OBRA</span>
             </Link>
             <p className="type-headline max-w-md">
-              The jersey studio for events worth keeping.
+              Limited edition football jerseys, from concept to creation.
             </p>
             <p className="type-body text-cream/70 mt-4 max-w-md">
-              Department KURO — a dedicated jersey department for the event.
+              Department OBRA — a dedicated jersey studio for festivals, artists and creators.
             </p>
           </div>
 
@@ -46,20 +46,20 @@ export function SiteFooter() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:hello@deptkuro.com"
+                  href="mailto:hello@obra.studio"
                   className="type-body text-cream hover:text-sun transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
                 >
-                  hello@deptkuro.com
+                  hello@obra.studio
                 </a>
               </li>
               <li>
                 <a
-                  href="https://instagram.com/deptkuro"
+                  href="https://instagram.com/obrajersey"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="type-body text-cream hover:text-sun transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
                 >
-                  @deptkuro
+                  @obrajersey
                 </a>
               </li>
               <li>
@@ -69,7 +69,7 @@ export function SiteFooter() {
                   rel="noopener noreferrer"
                   className="type-body text-cream hover:text-sun transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
                 >
-                  KURO Studio · LinkedIn
+                  OBRA Studio · LinkedIn
                 </a>
               </li>
             </ul>
@@ -107,7 +107,7 @@ export function SiteFooter() {
         </div>
 
         <div className="border-t border-cream/15 py-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <p className="type-label text-cream/60">© 2026 KURO · DEPARTMENT KURO</p>
+          <p className="type-label text-cream/60">© 2026 OBRA · Department OBRA</p>
           <div className="flex items-center gap-6">
             <Link
               href="/privacy"
@@ -116,7 +116,7 @@ export function SiteFooter() {
               Privacy
             </Link>
             <span className="type-label text-cream/40">
-              A jersey department for the event.
+              A jersey studio for the drop.
             </span>
           </div>
         </div>

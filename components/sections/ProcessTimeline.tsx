@@ -14,7 +14,7 @@ const steps: ProcessStep[] = [
     title: 'Discovery',
     timeframe: 'First contact to signed brief.',
     description:
-      'A short call. Volume, timeline, budget, brand, references. KURO writes a one-page brief. Client signs.',
+      'A short call. Volume, timeline, budget, brand, references. OBRA writes a one-page brief. Client signs.',
     tone: 'sun',
   },
   {
@@ -100,7 +100,7 @@ export function ProcessTimeline() {
 
             <div className="hidden md:flex items-center self-stretch">
               <span className="type-tag text-smoke rotate-90 origin-center whitespace-nowrap">
-                KURO · STAGE {step.number}
+                OBRA · STAGE {step.number}
               </span>
             </div>
           </div>
